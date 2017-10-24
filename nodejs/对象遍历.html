@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>对象遍历</title>
+	<script type="text/javascript">
+		// 对象遍历的方法
+		var a = {a:'alex', b:'tom'};
+		// for(var i in a){
+		// 	alert(i)
+		// }
+		for(var i in a){
+			alert(a[i]);
+		}
+		
+		// 可以防止收集到c属性
+		Object.prototype.c = 'roy';			
+		for(var i in a){
+			if(a.hasOwnProperty(i)){
+				alert(i)
+			}
+		}
+		console.log(a);
+
+		// V8引擎中收集键值的方法
+		console.log(Object.keys(a));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

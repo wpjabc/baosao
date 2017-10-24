@@ -1,0 +1,2459 @@
+/*游戏界面样式*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+}
+
+body{
+	width: 86%;
+	max-width: 2200px;
+	min-width: 600px;
+	margin: 0 auto;
+	background: url('../images/bg.jpg') no-repeat;
+	background-position: -6% -6%;
+	background-size: 100%;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+
+li{
+	list-style: none;
+}
+/*洗牌时候阻止点击的蒙层*/
+.noClick {
+	width: 60%;
+	height: 0%;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+}
+.alertNotice{
+	width: 360px;
+	height: 80px;
+	position: absolute;
+	top: 1%;
+	left: 50%;
+	margin-left: -200px;
+	padding: 2%;
+	font-size: 1.5em;
+	color: green;
+	font-weight: bold;
+	text-align: center;
+	line-height: 41px;
+	background: #eee;
+	border-radius: 6px;
+	box-shadow: 0px 1px 30px #1d1d1f;
+	z-index: 999;
+	transform: scale(0);
+}
+.alerthide {
+	animation: alehide .5s ease 1.5s forwards;
+}
+
+@keyframes alehide {
+	from{
+		transform: scale(.8);
+	}
+	to{
+		transform: scale(0);
+	}
+}
+/*左边第一个玩家*/
+.left{
+	width:20%;
+	height: 800px;
+	padding-top: 5%;
+	float: left;
+	/*background: red;*/
+}
+
+.mid{
+	width:60%;
+	height: 800px;
+	float: left;
+	/*background: blue;*/
+}
+
+
+/*右边第三个玩家*/
+.right{
+	width:20%;
+	height: 800px;
+	padding-top: 5%;
+	float: right;
+	/*background: yellow;*/
+}
+
+.all_poker li{
+	position: absolute;
+	border-radius: 7px;
+}
+
+
+
+
+.play_1 li,.play_2 li,.play_3 li{
+	position: absolute;
+	border-radius: 7px;
+}
+
+
+
+@media screen and (max-width:2200px) and (min-width:1500px){
+	/*中间第二个玩家*/
+	.mid_end{
+		width: 100%;
+		height: 300px;
+		margin-top: 9%;
+		float: left;
+		/*background: #fff;*/
+	}
+	/*三个玩家位置*/
+	.play_1, .play_2, .play_3{
+		width:125px;
+		height: 175px;
+		display:block;
+		position: relative;
+		margin: 36px auto 0px;
+	}
+
+	.mid_top{
+		width: 100%;
+		height: 640px;
+		float: left;
+		/*background: #000;*/
+	}
+
+	.all_poker{
+		width: 125px;
+		height: 110px;
+		margin: 540px auto 0px;
+		position: relative;
+		transform-style: preserve-3d;
+		perspective: 500;
+		/*background: #fff;*/
+	}
+
+	.temp_poker{
+		width: 125px;
+		height: 175px;
+		margin: 100px auto 0px;
+		position: relative;
+	}
+
+	/*扑克牌背面*/
+	.back {
+		width:125px;
+		height: 175px;
+		background: url('../images/back.jpg');
+		background-size: 100%;
+		position: absolute;
+		z-index: 100;
+	}
+
+	/*中间放三张地主牌和积分榜的平台*/
+	.platform{
+		width:1100px;
+		height:100px;
+		position:absolute;
+		top:11%;
+		bottom:1%;
+		left:50%;
+		margin-left:-550px;
+		transform: scale(0);
+		z-index:-1;
+	}
+
+	/*积分*/
+	.integral{
+		width: 298px;
+		height: 124px;
+		position: absolute;
+		top: 3.6%;
+		left: 52%;
+		margin-bottom:1%;
+		transform: scale(0);
+		text-align: center;
+		border-collapse: collapse;
+		box-shadow: 0 0 0 4px #7c7c7c;
+	}
+
+	.integral th{
+		padding: 10px;
+		border: 1px solid #4c4c4c;
+		background: #FFC107;
+	}
+	.integral td{
+		padding: 20px;
+		border: 1px solid #4c4c4c;
+		background: #ffedb8;
+	}
+	/*表格圆角*/
+
+	/*左边玩家 叫地主，不叫，出牌，不出，提醒按钮*/
+	.play_1 .btn, .play_1 .action{
+		width: 90px;
+		height: 84px;
+		display:none;
+		position: relative;
+		float: left;
+		left: 140px;
+		z-index: 999;
+	}
+	
+	/*玩家一，点击‘不要’弹框*/
+	.pass_remind1{
+		width: 200px;
+		height: 150px;
+		position: absolute;
+		top: -162%;
+		left: 116%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 150px;
+		font-size: 3em;
+	}
+	.pass_remind1 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -29%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind1 p{
+		display: inline-block;
+		position: relative;
+		left: 50%;
+	    margin-left: -3em;
+	}
+
+	/*玩家二，点击‘不要’弹框*/
+	.pass_remind2{
+		width: 200px;
+		height: 150px;
+		position: absolute;
+		top: 60%;
+		left: 2%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 150px;
+		font-size: 3em;
+	}
+	.pass_remind2 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -29%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind2 p{
+		display: inline-block;
+		position: relative;
+		left: 50%;
+	    margin-left: -3em;
+	}
+
+	/*玩家三，点击‘不要’弹框*/
+	.pass_remind3{
+		width: 200px;
+		height: 150px;
+		position: absolute;
+		top: -140%;
+		left: 10%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 150px;
+		font-size: 3em;
+	}
+	.pass_remind3 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: 87%;
+		border-left: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind3 p{
+		display: inline-block;
+		position: relative;
+		left: 50%;
+	    margin-left: -3em;
+	}
+
+	/*头像*/
+	.play_1 .player{
+		width: 72px;
+		position: absolute;
+		margin-top: -38%;
+		margin-left: -78%;
+		transform: scale(0);
+	}
+	.play_1 .playerPic1{
+		width: 72px;
+		height: 130px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_2 .player{
+		width: 72px;
+		position: absolute;
+		margin-top:0%;
+		margin-left:-77%;
+		transform: scale(0);
+	}
+	.play_2 .playerPic2{
+		width:72px;
+		height:130px;
+		display:block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_3 .player{
+		width: 72px;
+		position: absolute;
+		margin-top: -30%;
+		margin-left: 150%;
+		transform: scale(0);
+	}
+	.play_3 .playerPic3{
+		width: 72px;
+		height: 130px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.player p{
+		text-align: center;
+		color: #fff;
+	}
+
+	/*第一个玩家，倒计时*/
+	.play_1 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: -5px;
+	    left: 19px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第二个玩家，倒计时*/
+	.play_2 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 20px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第三个玩家，倒计时*/
+	.play_3 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 46px;
+	    left: -24px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第一个和第三个玩家，按钮的父级*/
+	.play_1 .btnAction{
+	 	width: 10px;
+	 	height: 10px;
+		display: block;
+		position: absolute;
+		left: -1%;
+		top: 26%;
+		z-index: 999;
+	}
+	.play_3 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: -47%;
+		top: 50%;
+		z-index: 999;
+	}
+
+	/*第二个玩家，按钮的父级*/
+	.play_2 .btnAction{
+	 	width: 550px;
+	 	height: 66px;
+		display: block;
+		position: absolute;
+		top: -75%;
+		left: 50%;
+		margin-left: -32px;
+		z-index: 999;
+	}
+
+	/*右边玩家 叫地主，不叫按钮*/
+	.play_3 .btn{
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -50px;
+		z-index: 999;
+	}
+	/*右边玩家 出牌，不出，提醒按钮*/
+	.play_3 .action {
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -10px;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家 叫地主，不叫按钮*/
+	.play_2 .btn{
+		width: 206px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家，出牌。不出，提醒按钮*/
+	.play_2 .action{
+		width: 404px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*左边第一个玩家，叫地主，不加按钮样式*/
+	.play_1 .btn>.btn_land, .play_1 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+			z-index: 999;
+	}
+
+	/*中间第二个玩家，叫地主，不加按钮样式*/
+	.play_2 .btn>.btn_land, .play_2 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 75px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/*右边第三个玩家，叫地主，不加按钮样式*/
+	.play_3 .btn>.btn_land, .play_3 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/* 左边：出牌，不出，提醒按钮统一样式*/
+	.play_1 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*中间：出牌，不出，提醒按钮统一样式*/
+	.play_2 .action input{
+		width: 100px;
+		height: 45px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 16px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*右边：出牌，不要，提醒按钮统一样式*/
+	.play_3 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 60px;
+		left: -40px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+}
+@media screen and (min-width: 1401px){
+	/*中间第二个玩家*/
+	.mid_end{
+		width: 100%;
+		height: 300px;
+		margin-top: 20%;
+		float: left;
+		/*background: #fff;*/
+	}
+
+	/*三个玩家位置*/
+	.play_1, .play_2, .play_3{
+		width:100px;
+		height: 140px;
+		display:block;
+		position: relative;
+		margin: 36px auto 0px;
+	}
+
+	.mid_top{
+		width: 100%;
+		height: 515px;
+		float: left;
+		/*background: #000;*/
+	}
+
+	.all_poker{
+		width: 100px;
+		height: 140px;
+		margin: 360px auto 0px;
+		position: relative;
+		/*background: #fff;*/
+	}
+
+	.temp_poker{
+		width: 100px;
+		height: 140px;
+		margin: 100px auto 0px;
+		position: relative;
+	}
+
+	/*扑克牌背面*/
+	.back {
+		width: 100px;
+		height: 140px;
+		background: url('../images/back.jpg');
+		background-size: 100%;
+		position: absolute;
+		z-index: 100;
+	}
+	
+
+	/*中间放三张地主牌和积分榜的平台*/
+	.platform{
+		width:42%;
+		height:136px;
+		position:absolute;
+		top:2%;
+		bottom:1%;
+		left:50%;
+		margin-left:-21%;
+		transform: scale(0);
+		z-index:-1;
+	}
+	
+	/*积分*/
+	.integral{
+		width: 248px;
+		height: 94px;
+		position: absolute;
+		top:4.5%;
+		left:53%;
+		margin-bottom:1%;
+		text-align: center;
+		transform: scale(0);
+		border-collapse: collapse;
+		box-shadow: 0 0 0 4px #7c7c7c;
+	}
+	.integral th{
+		padding: 1px;
+		border: 1px solid #4c4c4c;
+		background: #FFC107;
+	}
+	
+	.integral tr td{
+		padding: 14px;
+		border: 1px solid #4c4c4c;
+		background: #ffedb8;
+	}
+	
+	/*表格圆角*/
+	/*	.integral th:first-child{
+		border-top-left-radius: 10px;
+	}
+	.integral th:last-child{
+		border-top-right-radius: 10px;
+	}
+	.integral td:first-child{
+		border-bottom-left-radius: 10px;
+	}
+	.integral td:last-child{
+		border-bottom-right-radius: 10px;
+	}
+	*/
+
+	/*左边玩家 叫地主，不叫，提醒按钮*/
+	.play_1 .btn, .play_1 .action{
+		width: 90px;
+		height: 120px;
+		display:none;
+		position: relative;
+		float: left;
+		left: 244px;
+		z-index: 999;
+	}
+	
+
+	/*玩家一，点击‘不要’弹框*/
+	.pass_remind1{
+		width: 130px;
+		height: 90px;
+		position: absolute;
+		top: -125%;
+		left: 116%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 2em;
+	}
+	.pass_remind1 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -44%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind1 p{
+		display: inline-block;
+		position: relative;
+		top: -17%;
+		left: 50%;
+	    margin-left: -3.8em;
+	}
+
+	/*玩家二，点击‘不要’弹框*/
+	.pass_remind2{
+		width: 150px;
+		height: 100px;
+		position: absolute;
+		top: 36%;
+		left: 2%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 2em;
+	}
+	.pass_remind2 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -34%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind2 p{
+		display: inline-block;
+		position: relative;
+		top: -17%;
+		left: 50%;
+	    margin-left: -3.8em;
+	}
+
+	/*玩家三，点击‘不要’弹框*/
+	.pass_remind3{
+		width: 130px;
+		height: 90px;
+		position: absolute;
+		top: -125%;
+		left: 32%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 2em;
+	}
+	.pass_remind3 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: 82%;
+		border-left: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind3 p{
+		display: inline-block;
+		position: relative;
+		top: -17%;
+		left: 50%;
+	    margin-left: -3.8em;
+	}
+
+	/*头像*/
+	.play_1 .player{
+		width: 72px;
+		position: absolute;
+		margin-top: -32%;
+		margin-left: -70%;
+		transform: scale(0);
+	}
+
+	.play_1 .playerPic1{
+		width: 72px;
+		height: 123px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -100px 0px;
+	}
+
+	.play_2 .player{
+		width: 88px;
+		position: absolute;
+		margin-top: -4%;
+		margin-left: -76%;
+		transform: scale(0);
+	}
+	.play_2 .playerPic2{
+		width: 72px;
+		height: 123px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_3 .player{
+		width: 88px;
+		position: absolute;
+		margin-top: -32%;
+		margin-left: 118%;
+		transform: scale(0);
+	}
+	.play_3 .playerPic3{
+		width: 72px;
+		height:123px;
+		display:block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.player p{
+		text-align: center;
+		color: #fff;
+	}
+
+	.mid_top .desktop_poker {
+		margin: -6% 34%;
+	}
+	/*第一个玩家，倒计时*/
+	.play_1 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: -5px;
+	    left: 19px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第二个玩家，倒计时*/
+	.play_2 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 20px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第三个玩家，倒计时*/
+	.play_3 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 46px;
+	    left: -24px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第一个和第三个玩家，按钮的父级*/
+	.play_1 .btnAction{
+	 	width: 1px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: -82%;
+		top: 60%;
+		z-index: 999;
+	}
+	.play_3 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: -100%;
+		top: 60%;
+		z-index: 999;
+	}
+
+	/*第二个玩家，按钮的父级*/
+	.play_2 .btnAction{
+	 	width: 550px;
+	 	height: 66px;
+		display: block;
+		position: absolute;
+		top: -100%;
+		left: 50%;
+		z-index: 999;
+	}
+
+	/*右边玩家 叫地主，不叫按钮*/
+	.play_3 .btn{
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -50px;
+		z-index: 999;
+	}
+	/*右边玩家 出牌，不出，提醒按钮*/
+	.play_3 .action {
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -10px;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家 叫地主，不叫按钮*/
+	.play_2 .btn{
+		width: 206px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家，出牌。不出，提醒按钮*/
+	.play_2 .action{
+		width: 404px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*左边第一个玩家，叫地主，不加按钮样式*/
+	.play_1 .btn>.btn_land, .play_1 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+			z-index: 999;
+	}
+
+	/*中间第二个玩家，叫地主，不加按钮样式*/
+	.play_2 .btn>.btn_land, .play_2 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 75px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/*右边第三个玩家，叫地主，不加按钮样式*/
+	.play_3 .btn>.btn_land, .play_3 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/* 左边：出牌，不出，提醒按钮统一样式*/
+	.play_1 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*中间：出牌，不出，提醒按钮统一样式*/
+	.play_2 .action input{
+		width: 100px;
+		height: 45px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 16px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*右边：出牌，不要，提醒按钮统一样式*/
+	.play_3 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 60px;
+		left: -40px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+}
+
+@media screen and (max-width:1400px) and (min-width: 901px){
+	/*中间第二个玩家*/
+	.mid_end{
+		width: 100%;
+		height: 200px;
+		position: relative;
+		margin-top: -6%;
+		float: left;
+		/*background: #fff;*/
+	}
+
+	.mid_top{
+		width: 100%;
+		height: 566px;
+		float: left;
+		/*background: #000;*/
+	}
+
+	.all_poker{
+		width: 100px;
+		height: 140px;
+		margin: 300px auto 0px;
+		position: relative;
+		/*background: #fff;*/
+	}
+
+	.temp_poker{
+		width: 100px;
+		height: 140px;
+		margin: 100px auto 0px;
+		position: relative;
+	}
+
+	/*扑克牌背面*/
+	.back {
+		width: 100px;
+		height: 140px;
+		background: url('../images/back.jpg');
+		background-size: 100%;
+		position: absolute;
+		z-index: 100;
+	}
+	
+
+	/*中间放三张地主牌和积分榜的平台*/
+	.platform{
+		width:42%;
+		height:136px;
+		position:absolute;
+		top:2%;
+		bottom:1%;
+		left:50%;
+		margin-left:-21%;
+		transform: scale(0);
+		z-index:-1;
+	}
+	
+	/*积分*/
+	.integral{
+		width: 248px;
+		height: 99px;
+		position: absolute;
+		top: 4%;
+		right: 29%;
+		margin-bottom:1%;
+		text-align: center;
+		transform: scale(0);
+		border: 3px solid #9f9f9f;
+		border-collapse: collapse;
+		box-shadow: 0px 1px 4px #7c7c7c;
+	}
+	.integral th{
+		padding: 5px;
+		border: 1px solid #333;
+		background: #FFC107;
+	}
+	.integral td{
+		padding: 12px;
+		border: 1px solid #333;
+		background: #ffedb8;
+	}
+
+
+	/*左边玩家 叫地主，不叫，提醒按钮*/
+	.play_1 .btn, .play_1 .action{
+		width: 90px;
+		height: 120px;
+		display:none;
+		position: relative;
+		float: left;
+		left: 225px;
+		z-index: 999;
+	}
+	
+	
+	/*玩家一，点击‘不要’弹框*/
+	.pass_remind1{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: -136%;
+		left: 268%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind1 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -44%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind1 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*玩家二，点击‘不要’弹框*/
+	.pass_remind2{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: 60%;
+		left: 1%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind2 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -45%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind2 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*玩家三，点击‘不要’弹框*/
+	.pass_remind3{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: -162%;
+		left: 80%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind3 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: 81%;
+		border-left: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind3 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*头像*/
+	.play_1 .player{
+		width: 80px;
+		position: absolute;
+		margin-top: -3%;
+		margin-left: -6%;
+		transform: scale(0);
+	}
+
+	.play_1 .playerPic1{
+		width: 80px;
+		height: 126px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_2 .player{
+		width: 80px;
+		position: absolute;
+		margin-top: 5%;
+		margin-left: -7%;
+		transform: scale(0);
+	}
+	.play_2 .playerPic2{
+		width: 80px;
+		height: 126px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+	.play_3 .player{
+		width: 80px;
+		position: absolute;
+		margin-top: -3%;
+		margin-left: 17%;
+		transform: scale(0);
+	}
+	.play_3 .playerPic3{
+		width: 80px;
+		height: 126px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+	.left .play_1 li {
+		left: 96px;
+		transform: scale(.9);
+	}
+
+	.mid .play_2 {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		top: 0px;
+	    left: 50% !important;
+	    margin-left: -50%;
+	}
+
+	.play_2 li {
+		bottom: 10px;
+		transform: scale(.9);
+	}
+	.right .play_3 li {
+		right: 90px;
+		transform: scale(.9);
+	}
+
+
+	.desktop_poker1>li {
+		transform: scale(.9);
+	}
+	.desktop_poker {
+	    left: 50%;
+	    margin-left: -3%;
+	    position: absolute;
+	    /* width: 50%; */
+	}
+
+	.desktop_poker>li {
+		transform: scale(.9);
+	}
+	.desktop_poker3>li {
+		transform: scale(.9);
+	}
+
+	.player p{
+		text-align: center;
+		color: #fff;
+	}
+
+	/*第一个玩家，倒计时*/
+	.play_1 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: -5px;
+	    left: 19px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第二个玩家，倒计时*/
+	.play_2 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 20px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第三个玩家，倒计时*/
+	.play_3 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 46px;
+	    left: -24px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第一个和第三个玩家，按钮的父级*/
+	.play_1 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: -1%;
+		top: 26%;
+		z-index: 999;
+	}
+	.play_3 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: 80%;
+		top: 26%;
+		z-index: 999;
+	}
+
+	/*第二个玩家，按钮的父级*/
+	.play_2 .btnAction{
+	 	width: 550px;
+	 	height: 66px;
+		display: block;
+		position: absolute;
+		top: -40%;
+		left: 50%;
+		margin-left: -300px;
+		z-index: 999;
+	}
+
+	/*右边玩家 叫地主，不叫按钮*/
+	.play_3 .btn{
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -50px;
+		z-index: 999;
+	}
+	/*右边玩家 出牌，不出，提醒按钮*/
+	.play_3 .action {
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -10px;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家 叫地主，不叫按钮*/
+	.play_2 .btn{
+		width: 206px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家，出牌。不出，提醒按钮*/
+	.play_2 .action{
+		width: 404px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*左边第一个玩家，叫地主，不加按钮样式*/
+	.play_1 .btn>.btn_land, .play_1 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+			z-index: 999;
+	}
+
+	/*中间第二个玩家，叫地主，不加按钮样式*/
+	.play_2 .btn>.btn_land, .play_2 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 75px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/*右边第三个玩家，叫地主，不加按钮样式*/
+	.play_3 .btn>.btn_land, .play_3 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/* 左边：出牌，不出，提醒按钮统一样式*/
+	.play_1 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*中间：出牌，不出，提醒按钮统一样式*/
+	.play_2 .action input{
+		width: 100px;
+		height: 45px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 16px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*右边：出牌，不要，提醒按钮统一样式*/
+	.play_3 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 60px;
+		left: -40px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+}
+@media screen and (max-width: 900px){
+	/*中间第二个玩家*/
+	.mid_end{
+		width: 100%;
+		height: 200px;
+		margin-top: -6%;
+		float: left;
+		/*background: #fff;*/
+	}
+
+	.mid_top{
+		width: 100%;
+		height: 566px;
+		float: left;
+		/*background: #000;*/
+	}
+
+	.all_poker{
+		width: 100px;
+		height: 140px;
+		margin: 300px auto 0px;
+		position: relative;
+		/*background: #fff;*/
+	}
+
+	.temp_poker{
+		width: 100px;
+		height: 140px;
+		margin: 100px auto 0px;
+		position: relative;
+	}
+
+	/*扑克牌背面*/
+	.back {
+		width: 100px;
+		height: 140px;
+		background: url('../images/back.jpg');
+		background-size: 100%;
+		position: absolute;
+		z-index: 100;
+	}
+	
+
+	/*中间放三张地主牌和积分榜的平台*/
+	.platform{
+		width:900px;
+		height:100px;
+		position:absolute;
+		top:9%;
+		bottom:1%;
+		left:50%;
+		margin-left:-450px;
+		transform: scale(0);
+		z-index:-1;
+	}
+	
+	/*积分*/
+	.integral{
+		width: 248px;
+		height: 99px;
+		position: absolute;
+		top: 4%;
+		right: 29%;
+		margin-bottom:1%;
+		text-align: center;
+		transform: scale(0);
+		border: 3px solid #9f9f9f;
+		border-collapse: collapse;
+		box-shadow: 0px 1px 4px #7c7c7c;
+	}
+	.integral th{
+		padding: 5px;
+		border: 1px solid #333;
+		background: #FFC107;
+	}
+	.integral td{
+		padding: 12px;
+		border: 1px solid #333;
+		background: #ffedb8;
+	}
+
+
+	/*左边玩家 叫地主，不叫，提醒按钮*/
+	.play_1 .btn, .play_1 .action{
+		width: 90px;
+		height: 120px;
+		display:none;
+		position: relative;
+		float: left;
+		left: 225px;
+		z-index: 999;
+	}
+	
+	
+	/*玩家一，点击‘不要’弹框*/
+	.pass_remind1{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: -136%;
+		left: 268%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind1 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -44%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind1 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*玩家二，点击‘不要’弹框*/
+	.pass_remind2{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: 60%;
+		left: 1%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind2 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: -45%;
+		border-right: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-left: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind2 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*玩家三，点击‘不要’弹框*/
+	.pass_remind3{
+		width: 120px;
+		height: 80px;
+		position: absolute;
+		top: -162%;
+		left: 80%;
+		transform: scale(0);
+		background: #eee;
+		border-radius: 11px;
+		box-shadow: 0 1px 33px -3px #626262;
+		z-index: 999;
+		line-height: 100px;
+		font-size: 1.75em;
+	}
+	.pass_remind3 div{
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 1%;
+		left: 81%;
+		border-left: 40px solid #eee;
+		border-top: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-bottom: 40px solid transparent;
+		z-index: 998;
+	}
+	.pass_remind3 p{
+		display: inline-block;
+		position: relative;
+		top: -35%;
+		left: 50%;
+	    margin-left: -4em;
+	}
+
+	/*头像*/
+	.play_1 .player{
+		width: 60px;
+		position: absolute;
+		margin-top: -3%;
+		margin-left: -6%;
+		transform: scale(0);
+	}
+
+	.play_1 .playerPic1{
+		width: 90px;
+		height: 126px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_2 .player{
+		width: 60px;
+		position: absolute;
+		margin-top: -2%;
+		margin-left: -7%;
+		transform: scale(0);
+	}
+	.play_2 .playerPic2{
+		width: 90px;
+		height: 126px;
+		display: block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+
+	.play_3 .player{
+		width: 60px;
+		position: absolute;
+		margin-top: -3%;
+		margin-left: 16%;
+		transform: scale(0);
+	}
+	.play_3 .playerPic3{
+		width:90px;
+		height:126px;
+		display:block;
+		position: relative;
+		background: url('../images/ico_nongmin3.png') no-repeat -90px 0px;
+	}
+	
+	.left .play_1 li {
+		left: 96px;
+		transform: scale(.9);
+	}
+	.play_2 li {
+		bottom: 10px;
+		transform: scale(.9);
+	}
+	.right .play_3 li {
+		right: 90px;
+		transform: scale(.9);
+	}
+
+
+	.player p{
+		text-align: center;
+		line-height: 18em;
+		color: #fff;
+	}
+
+	/*第一个玩家，倒计时*/
+	.play_1 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: -5px;
+	    left: 19px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第二个玩家，倒计时*/
+	.play_2 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 20px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第三个玩家，倒计时*/
+	.play_3 .btnAction .second_show{
+		width: 64px;
+		height: 72px;
+		display: inline-block;
+		position: relative;
+	    top: 46px;
+	    left: -24px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 87px;
+		background: url('../images/clock.png');
+	    background-size: cover;
+	}
+
+	/*第一个和第三个玩家，按钮的父级*/
+	.play_1 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: -1%;
+		top: 26%;
+		z-index: 999;
+	}
+	.play_3 .btnAction{
+	 	width: 90px;
+	 	height: 120px;
+		display: block;
+		position: absolute;
+		left: 80%;
+		top: 26%;
+		z-index: 999;
+	}
+
+	/*第二个玩家，按钮的父级*/
+	.play_2 .btnAction{
+	 	width: 550px;
+	 	height: 66px;
+		display: block;
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		margin-left: -330px;
+		z-index: 999;
+	}
+
+	/*右边玩家 叫地主，不叫按钮*/
+	.play_3 .btn{
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -50px;
+		z-index: 999;
+	}
+	/*右边玩家 出牌，不出，提醒按钮*/
+	.play_3 .action {
+		width: 90px;
+		height: 30px;
+		display: none;
+		position: relative;
+		float: left;
+		left: -10px;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家 叫地主，不叫按钮*/
+	.play_2 .btn{
+		width: 206px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*中间第二个玩家，出牌。不出，提醒按钮*/
+	.play_2 .action{
+		width: 404px;
+		height: 72px;
+		display: inline-block;
+		display: none;
+		position: relative;
+		float: left;
+		z-index: 999;
+	}
+
+	/*左边第一个玩家，叫地主，不加按钮样式*/
+	.play_1 .btn>.btn_land, .play_1 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+			z-index: 999;
+	}
+
+	/*中间第二个玩家，叫地主，不加按钮样式*/
+	.play_2 .btn>.btn_land, .play_2 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 75px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/*右边第三个玩家，叫地主，不加按钮样式*/
+	.play_3 .btn>.btn_land, .play_3 .btn>.btn_no{
+		width: 92px;
+		height: 36px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+		z-index: 999;
+	}
+
+	/* 左边：出牌，不出，提醒按钮统一样式*/
+	.play_1 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*中间：出牌，不出，提醒按钮统一样式*/
+	.play_2 .action input{
+		width: 100px;
+		height: 45px;
+		display: inline-block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 16px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+	/*右边：出牌，不要，提醒按钮统一样式*/
+	.play_3 .action input{
+		width: 100px;
+		height: 45px;
+		display:block;
+		position: relative;
+		color: #fff;
+		font-size: 1.1em;
+		top: 60px;
+		left: -40px;
+		border:3px solid #fff;
+		border-radius: 30px;
+		outline: none;
+		background: rgb(255, 136, 0);
+		box-shadow: 1px 1px 12px #333;
+		-webkit-box-shadow: 1px 1px 12px #333;
+		transition: transform 0.1s ease;
+		transform: scale3d(0.9,0.9,1);
+	}
+
+}
+
+/*不要按钮*/
+.action>input:nth-of-type(1):hover{		
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	background: #8BC34A;
+}
+
+
+
+
+/*出牌按钮*/
+.action>input:nth-of-type(2):hover{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	background: #8BC34A;
+}
+
+/*提醒按钮*/
+.action>input:nth-of-type(3):hover{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	background: #8BC34A;
+}
+
+/*出牌，不出，提醒点击样式*/
+.left .action input:active{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	box-shadow:-1px 1px 2px #333 inset;
+	-webkit-box-shadow:-1px 1px 2px #333 inset;
+	background: #648c35;
+}
+
+/*出牌，不要，提醒点击样式*/
+.mid_end .action input:active{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	box-shadow:-1px 1px 2px #333 inset;
+	-webkit-box-shadow:-1px 1px 2px #333 inset;
+	background: #648c35;
+}
+
+/*出牌，不要，提醒点击样式*/
+.right .action input:active{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	box-shadow:-1px 1px 2px #333 inset;
+	-webkit-box-shadow:-1px 1px 2px #333 inset;
+	background: #648c35;
+}
+/*叫地主按钮*/
+.btn>.btn_land:hover{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	background: #8BC34A;
+}
+
+/*不叫按钮*/
+.btn>.btn_no:hover{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	background: #8BC34A;
+ }
+/*叫地主按钮*/
+.btn>.btn_land:active{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	box-shadow:-1px 1px 2px #333 inset;
+	-webkit-box-shadow:-1px 1px 2px #333 inset;
+	background: #648c35;
+}
+
+/*不叫按钮*/
+.btn>.btn_no:active{
+	transform: scale3d(1,1,1);
+	cursor: pointer;
+	color: white;
+	box-shadow:-1px 1px 2px #333 inset;
+	-webkit-box-shadow:-1px 1px 2px #333 inset;
+	background: #648c35;
+ }
+
+ /*有玩家或者地主赢牌时显示*/
+.win{
+	width: 100%;
+	height: 1080px;
+	position: absolute;
+	left: 0;
+	transform: scale(0);
+	background: rgba(0,0,0,0.8);
+	z-index: 999;
+}
+
+.win>div{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -100px;
+	/*background: #999;*/
+}
+
+/*退出游戏*/
+.quit_game{
+	width: 100px;
+	height: 60px;
+	display: block;
+	position: relative;
+	margin: 25px auto;
+	border: none;
+	outline: none;
+	border: 2px solid #eee;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #ff7500;
+	transform: scale(1);
+	transition: transform 0.2s ease;
+}
+
+/*继续游戏*/
+.continue_game{
+	width: 100px;
+	height: 60px;
+	display: block;
+	position: relative;
+	margin: 25px auto;
+	border: none;
+	outline: none;
+	border: 2px solid #eee;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #009688;
+	transform: scale(1);
+	transition: transform 0.2s ease;
+}
+
+.quit_game:hover{
+	cursor: pointer;
+	background: #FF5722;
+	transform: scale(1.2);
+}
+
+.continue_game:hover{
+	cursor: pointer;
+	background: #00BCD4;
+	transform: scale(1.2);
+}
+
+.quit_game:active{
+	background: #ff7500;
+	box-shadow: -2px -1px 5px #333 inset;
+}
+
+.continue_game:active{
+	background: #009688;
+	box-shadow: -2px -1px 5px #333 inset;
+}
+/*按钮‘看看’*/
+.gameInfo{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	bottom: 2%;
+	right: 1%;
+	color: #fff;
+	text-align: center;
+	line-height: 80px;
+	font-size: 1.5em;
+	background: #ff5722;
+	border: none;
+	border-radius: 80px;
+	box-shadow: 0px 0px 21px 1px #707070;
+	outline: none;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.gameInfo:hover{
+	background: #4CAF50;
+}
+.gameInfo:active{
+	background: green;
+	box-shadow: 0px 0px 21px 1px #707070 inset;
+	cursor: default;
+}
+/*游戏简介弹框*/
+.gameInfoMore{
+	width: 18%;
+	/*height: 480px;*/
+	display: block;
+	position: absolute;
+	padding-bottom:5%;
+	bottom: -60%;
+	right: -32%;
+	margin-left: 10%;
+	border-radius: 10px;
+	box-shadow: -2px -2px 33px #333;
+	background: #eee;
+	cursor: default;
+	overflow: hidden;
+}
+
+/*游戏简介弹框底下一栏‘关闭’*/
+.closePanel{
+	width:99%;
+	height: 2.5em;
+	display: block;
+	position:absolute;
+	bottom:0.5%;
+	left: 50%;
+	margin-left: -49.5%;
+	background: green;
+	border-radius: 10px;
+	border-top: 1px solid #666;
+}
+
+/*弹框文字*/
+.remindText{
+	color:#fff;
+	font-size: 1.5em;
+	line-height: 2em;
+	cursor: default;
+}
+
+/*游戏简介标题*/
+.title{
+	height: 37em;
+	display: block;
+	position: relative;
+	bottom: 820%;
+	text-align: center;
+	line-height: 69em;
+	color: #ff3d00;
+	font-size: 1em;
+	background: #ffa655;
+	border-radius: 16em;
+	box-shadow: -1px -1px 10px #6d6d6d inset;
+	cursor: default;
+}
+
+.QAPanel{
+	padding: 1%;
+}
+.hidePanel{
+	display: inline-block;
+	margin-left: 47%;
+	line-height:2.3em;
+	font-size:1em;
+	color: white;
+	cursor: default;
+}
+.closePanel:hover{
+	cursor: pointer;
+	background: red;
+}

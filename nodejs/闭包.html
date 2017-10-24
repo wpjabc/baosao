@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>闭包</title>
+	<script type="text/javascript">
+		/*
+			概念：
+			闭包就是能够读取其他函数内部变量的函数。
+			在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+
+			当内部函数 在定义它的作用域 的外部 被引用时,就创建了该内部函数的闭包 ,如果内部函数引用了位于外部函数的变量,当外部函数调用完毕后,这些变量在内存不会被 释放,因为闭包需要它们.
+			作用：
+			1、可以读取函数内部的变量；
+			2、让这些变量的值始终保持在内存中
+		 */
+		function f1(){
+	　　　　var n=999;
+	　　　　nAdd=function(){n+=1}
+	　　　　function f2(){
+	　　　　　　alert(n);
+	　　　　}
+	　　　　return f2;
+	　　}
+	　　var result=f1();
+	　　result(); // 999
+	　　nAdd();
+	　　result(); // 1000
+
+
+
+		var name = "The Window";   
+　　　　var object = {   
+	　　　　name : "My Object",   
+	　　　　getNameFunc : function(){   
+	　　　　　　return function(){   
+	　　　　　　　　return this.name;   // 这里的this指的是浏览器对象也就是window
+	　　　　　};   
+	　　　　}   
+		};
+		alert(object.getNameFunc()());
+
+
+		// 例子1
+		function outerFun(){
+			var a=0;
+			function innerFun(){
+				a++;
+				alert(a);
+			}
+			return innerFun;  //注意这里
+		}
+
+		var obj=outerFun();
+		obj();  //结果为1
+		obj();  //结果为2
+
+		/*
+		var a = 0;
+		function f1(){
+			alert(++a);
+		}		
+		f1();
+		f1();
+		*/
+		// 上面的例子相当于在不使不同的变量或参数的情况下，通过不同的对象方法进行同一方法进行了运算。
+		// 
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

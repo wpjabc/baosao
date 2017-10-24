@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="./css/bootstrap-theme.min.css" >
+	
+	<!-- 加载css样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css" >
+
+	<!-- 加载css样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/superday.css" >
+
+	<!-- 加载JQ -->
+	<script src="./js/jquery-3.2.1.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="./js/bootstrap.min.js"></script>
+	<style>
+		body{
+			width:100%;
+			height:100%;
+			overflow:hidden;
+			/*background:#000;*/
+		}
+		.img{
+			background:#666;
+			color:#999;
+		}
+
+		/***********轮播图开始***********/
+		.slider{
+		    overflow: hidden;
+		    position: relative;
+		}
+		.rahmen{
+		    width:100%;
+		    overflow: hidden;
+		    position: relative;
+		    background:#eee;
+		}
+		.rahmen>img{
+		    width:100%;
+		    opacity: 0;
+		}
+		.banner_imgs {
+		  /* 6倍屏幕宽度 */
+		  width: 600%;
+		  position:absolute;
+		  top:0px;
+		  left:0px;
+		}
+		.banner_imgs li {
+		  /* 一倍的屏幕宽度 */
+		  width: 16.666%;
+		  float: left;
+
+
+		}
+		.banner_imgs li a {
+		  display: block;
+		  width: 100%;
+		}
+		.banner_imgs li a img {
+		  display: block;
+		  width: 100%;
+		}
+		.banner_index {
+		  position: absolute;
+		  bottom: 7%;
+		  left: 32%;
+		  margin-right: 2rem;
+		}
+		.banner_index li {
+		  float: left;
+		  width: 2rem;
+		  height: 2rem;
+		  border: 1px solid white;
+		  border-radius: 50%;
+		  margin: 0 1rem;
+		}
+		.banner_index li.current {
+
+		  background-color: #fff;
+
+		}
+		/***********轮播图结束***********/
+	</style>
+</head>
+<body>
+	<div class="img">	
+		<a href="product.html"><i class="iconfont icon-left"></i></a>
+	</div>
+</body>
+</html>

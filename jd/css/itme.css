@@ -1,0 +1,181 @@
+/*头部样式开始*/
+html,body{
+	width:100%;
+	height:100%;
+	background:#fafafa;
+}
+header{
+	width:100%;
+	position:fixed;
+	z-index:9999;
+}
+	
+.null{
+	height:4rem;
+	clear:both;
+}
+.category{
+	width:8%;
+	background:#fafafa;
+	position:fixed;
+	top:90%;
+	right:3%;
+	padding:0.8rem;
+	border-radius:100%;
+}
+.top_nav {
+	background:#f1f1f1;
+}
+
+.top_nav ul li{
+	width:26%;
+	text-align:center;
+	font-size:1.5rem;
+	padding:1rem;
+	float:left;
+}
+.first_li{
+	color:#000;
+	border-bottom:0.1rem solid #000;
+	font-weight:bold;
+}
+.top_nav img{
+	width:10%;
+	padding:1rem;
+	float:left;
+}
+/*头部样式结束*/
+
+/*主体部分样式开始*/
+.content_nav{
+	display:block;
+}
+.content_nav ul li{
+	text-align:center;
+	font-size:1.4rem;
+	color:#aaa;
+	border-bottom:0.05rem solid #aaa;
+	padding-bottom:1rem;
+	margin-top:1rem;
+}
+.content_nav ul .nav_opt{
+	color:red;
+}
+.content_img{
+	display:block;
+
+}
+.content_text{
+	display:none;
+	padding:1rem;
+	margin-bottom:7rem;
+}
+
+table{
+	padding:1rem;
+	border:0.05rem solid #aaa;
+	color:#aaa;
+}
+
+tr,td{
+	border:0.05rem solid #aaa;
+	padding:1rem;
+}
+.sale{
+	width:100%;
+	padding-bottom:5rem;
+	background:#fff;
+	display:none;
+}
+.evaluation{
+	display:none;
+}
+.evaluation ul li{
+	width:20%;
+	font-size:1.2rem;
+	text-align:center;
+	float:left;
+	color:#999;
+	padding:1rem;
+	background:#fff;
+	border-bottom:0.08rem solid #aaa;
+}
+.evaluation ul li h6{
+	font-size:1.2rem;
+	color:#999;
+}
+.evaluation_Af{
+	height:100%;
+	background:#fff;
+	margin:0 auto;
+	text-align:center;
+	padding-top:50%;
+	padding-bottom:80%;
+}
+.evaluation_Af img{
+	width:20%;
+}
+.evaluation_Af p{
+	color:#999;
+	font-size:2rem;
+	margin:2rem 0;
+}
+.evaluation_Af a{
+	color:#999;
+	font-size:1.5rem;
+	padding:1rem 2.2rem;
+	border:0.06rem solid #aaa;
+}
+.evaluation_opt{
+	color:red;
+}
+
+.jd_bar{
+	display:none;
+}
+.jd_bar ul li{
+	
+	width:25%;
+	background:#333;
+	float:left;
+	padding:0.2rem 0.8rem;
+	color:#fafafa;
+	text-align:center;
+}
+.jd_bar ul li img{
+	width:30%;
+	padding:0.1rem;
+}
+
+/*主体部分样式结束*/
+
+
+/*底部样式开始*/
+footer{
+	width:100%;
+	position:fixed;
+	bottom:0;
+	background:rgba(249, 249, 249, 0.54);
+}
+footer ul li{
+	font-size:1.2rem;	
+	text-align:center;
+	padding:2rem 0;
+	opacity:0.9;
+	/*border-right: 0.1rem solid #aaa;*/
+}
+footer ul #footer-bg{
+	background: rgba(255, 0, 0, 0.83);
+	padding:1.8rem 0;
+	text-align:center;
+}
+footer ul #footer-bg a{
+	font-size:1.5rem;	
+	color:#fff;
+	/*padding-bottom:3rem;*/
+}
+.iconfont {
+    font-size: 2rem; 
+}
+/*底部样式结束*/
+

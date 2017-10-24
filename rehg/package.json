@@ -1,0 +1,10 @@
+{
+    "name": "my-http",
+    "version": "0.0.1",
+    "dependencies": {
+        "http": "0.0.0",
+        "stat": "0.0.5",
+        "url": "^0.11.0",
+        "util": "^0.10.3"
+    }
+}

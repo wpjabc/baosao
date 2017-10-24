@@ -1,0 +1,15 @@
+{
+	"API":[
+		{
+			"id":1,
+			"name":"sever.json",
+			"url":"./json/sever.json"
+		},
+
+		{
+			"id":2,
+			"name":"data.json",
+			"url":"./json/data.json"
+		}
+	]
+}

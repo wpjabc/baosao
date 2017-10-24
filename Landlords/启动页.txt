@@ -1,0 +1,33 @@
+类名：
+	btn：按钮爷爷
+	
+	dot：按钮父级（点）
+
+	continueGame：继续游戏按钮
+	
+	newGame：新游戏
+
+	aboutGame：关于游戏
+
+	playerPic：农民，地主图标父级
+
+	continueCover：继续游戏弹框蒙层
+
+	continue：继续游戏弹框
+
+	closeRemind：关闭按钮
+
+	confirmBtn：确定按钮
+
+	remindCover：点击‘新游戏’弹出提醒框蒙层
+
+	remind：点击‘新游戏’弹出提醒框
+	
+	remindText：弹框提醒文字
+	
+	QAofGame：‘关于游戏’弹框
+
+	
+函数名：
+	countTime()：进度条
+	

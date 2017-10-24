@@ -1,0 +1,150 @@
+body{
+	width:100%;
+	height:100%;
+}
+header{
+	width:100%;
+	position:fixed;
+	background:#fff;
+}
+.null{
+	height:12rem;
+	clear:both;
+}
+.category{
+	width:8%;
+	background:#fafafa;
+	position:fixed;
+	top:90%;
+	right:3%;
+	padding:0.8rem;
+	border-radius:100%;
+}
+.top_nav {
+	background:#f1f1f1;
+}
+.top_nav h1{
+	width:60%;
+	height:3rem;
+	background: #fff;
+	line-height:3rem;
+	float:left;
+	margin:0.5rem 10% 0 10%;
+	border-radius:3rem;
+	font-size:1.4rem;
+	/*background-size:12%;url(../images/ware/seek.png) no-repeat*/
+}
+.top_nav h1 img{
+	width:16%;
+	padding:0.5rem 1rem 1rem 1rem;
+}
+.top_nav img{
+	width:10%;
+	padding:1rem;
+	float:left;
+	
+}
+.jd_bar{
+	display:none;
+}
+.jd_bar ul li{
+	width:25%;
+	background:#333;
+	float:left;
+	padding:0.2rem 0.8rem;
+	color:#fafafa;
+	text-align:center;
+}
+.jd_bar ul li img{
+	width:30%;
+	padding:0.1rem;
+}
+.sort ul li{
+	width:25%;
+	float:left;
+	text-align:center;
+	font-size:1.5rem;
+	padding:1rem 0 1rem 0;
+	border-bottom: 1px solid #333;
+}
+.jd_sort ul li{
+	width:21%;
+	margin:1rem 2% 2% 2%;
+	padding:0.5rem 0.6rem 0.5rem 0.6rem;
+	float:left;
+	background:#f1f1f1;
+	text-align:center;
+	font-size:1.2rem;	
+}
+.synthesize{
+	display:none;
+	clear:both;
+	border-top: 1px solid #333;
+
+}
+.synthesize ul li{
+	width:100%;
+	font-size:1.4rem;
+	padding:1rem;	
+}
+/*头部样式结束*/
+
+/*主体样式开始*/
+content ul li{
+	padding:1rem;
+	width:50%;
+	float:left;
+	border: 1px solid #aaa;
+}
+content ul li img{
+	width:100%;
+	float:left;
+	padding:0 1rem 0 0rem;
+}
+
+content ul li .describe{
+	height:2rem;
+}
+content ul li .describe span{
+	line-height:2.5rem;
+	font-size:1.3rem;
+	background:#ccc;
+	color:#686868;
+}
+content ul li p{
+	clear:both;
+	font-size:1.6rem;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+}
+content ul li span{
+	font-size:1.8rem;
+	color:red;
+}
+content ul li .comment span{
+	color:#000;
+	font-size:1.2rem;
+}
+content ul li .comment em{
+	color:red;
+	border:1px solid red;
+}
+.composite{
+	color:red;
+}
+.alter{
+	width:100%;
+	border:none;
+}
+.img_width{
+	width:30%;
+}
+.good{
+	width:70%;
+	float:left;
+	border-bottom: 1px solid #333;
+}

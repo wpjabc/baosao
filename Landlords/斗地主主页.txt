@@ -1,0 +1,133 @@
+全局变量名：click：点击次数
+
+	    num1：定义玩家1按钮是否被点击
+	    
+	    num2：定义玩家2按钮是否被点击
+
+	    num3：定义玩家3按钮是否被点击
+
+
+数组名：all_poker_data：大小王	
+
+	all_play：所有玩家
+
+	play_1.name：玩家名字
+
+	play_1.integer：玩家积分
+
+	play_1.role：玩家身份
+
+	play_1.poker：玩家手牌
+
+	ready_poker.poker：准备出的牌
+
+	ready_poker.type：准备出的牌的类型
+
+	ready_poker.max：准备出的牌的最大值
+
+	desktop_poker.poker：桌面的牌
+
+	desktop_poker.type：桌面的牌的类型
+
+	desktop_poker.max：桌面的牌的最大值
+
+
+
+对象名：play_1：玩家一
+
+	play_2：玩家二
+
+	play_3：玩家三
+
+	ready_poker：准备出的牌
+
+	desktop_poker：桌面的牌
+
+	game_status：游戏状态
+
+
+
+函数名：clearPoker()：洗牌方法
+
+	deal()：发牌方法
+
+	landlord()：选地主方法
+
+	makePoker()：生成牌面HTML代码的方法
+
+	sortPlay_1(),sortPlay_2(),sortPlay_3()：生成手牌的方法
+
+	click1(),click2(),click3()：玩家叫地主的方法
+
+	landPoker()：把地主牌翻开并交给地主的方法
+
+	sortPoker1()：排序当前出牌的方法
+
+	startGame()：开始斗地主的方法
+
+	onPlay()：当前玩家出牌的方法
+
+	notPlay()：当前玩家不出牌的方法
+
+	checkPokers()：判断牌型方法
+
+	pokerVs()：牌型对决的方法
+
+
+类名：	btn_land：叫地主按钮
+
+	btn_no：不叫按钮
+
+	bgm：背景音乐
+
+	boom：炸弹
+
+	kBoom: 王炸
+
+	audioBoom：爆炸音效
+
+	aircraft：飞机
+
+	won:赢游戏
+
+	playerPic：头像
+
+	btnAction：按钮爷爷
+
+	btn：叫地主，不叫地主按钮父级
+
+	action：出牌，不出，提醒按钮父级
+
+	desktop_poker1：玩家1出牌位置
+	
+	desktop_poker：玩家2出牌位置
+	
+	desktop_poker3：玩家3出牌位置
+	
+	platform：中间顶部平台
+
+	integral：积分
+	
+	player：玩家
+
+	score：积分
+
+	
+	
+ID名：
+
+样式名：
+
+文件名：
+	index.html：斗地主主页
+
+	index.css：斗地主主页
+	
+	index.js：斗地主主页
+
+
+	startPage.html：启动页
+
+	startPage.css：启动页
+
+	startPage.js：启动页

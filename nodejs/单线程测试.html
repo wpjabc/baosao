@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>单线程测试</title>
+	<script type="text/javascript">
+		// var start = new Date();
+
+		// setTimeout(function(){
+		// 	console.log(Date.now() - start);		// 1002
+		// 	for(var i=0; i<10000000000; i++){}
+		// },1000);
+
+		// setTimeout(function(){
+		// 	console.log(Date.now() - start);		// 14323
+		// },2000);
+
+		/*
+			上面的例子说明，当每一个事件触发时会执行回调函数。但由于回调函数执行了很长的时间，所以下一个事件轮询执行的时间就远远超过了2秒。
+			这也就是解释了为有时候定时器不能完全遵守时间的设置的这个问题。
+		 */
+		
+		/*
+			JS与Node.js的基础内核：事件轮询
+		 */
+		console.log('我');
+		setTimeout(function(){
+			console.log('小明');
+		},100);
+		console.log('爱');
+
+		// 最后输出是  我爱小明
+	</script>
+</head>
+<body>
+
+</body>
+</html>

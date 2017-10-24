@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<title>iphoe8 plus</title>
+
+	<!-- 引入iconfont字体 -->
+	<link rel="stylesheet" type="text/css" href="./fonts/time/iconfont.css">
+	<script src="./fonts/time/iconfont.js"></script>
+
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+	<!-- 引入iconfont字体 -->
+	<link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+
+	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="./css/bootstrap-theme.min.css" >
+	
+	<!-- 加载css样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css" >
+
+	<!-- 加载css样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/product.css" >
+
+	<!-- 加载JQ -->
+	<script src="./js/jquery-3.2.1.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="./js/bootstrap.min.js"></script>
+
+	<!-- 加载js脚本 -->
+	<!-- <script src="./js/product.js"></script> -->
+
+	<style>
+		body{
+			width:100%;
+			height:100%;
+			overflow:hidden;
+			background:#000;
+		}
+		.img{
+			background:#666;
+			color:#999;
+		}
+
+		/***********轮播图开始***********/
+		.slider{
+		    overflow: hidden;
+		    position: relative;
+		}
+		.rahmen{
+		    width:100%;
+		    overflow: hidden;
+		    position: relative;
+		    background:#eee;
+		}
+		.rahmen>img{
+		    width:100%;
+		    opacity: 0;
+		}
+		.banner_imgs {
+		  /* 6倍屏幕宽度 */
+		  width: 600%;
+		  position:absolute;
+		  top:0px;
+		  left:0px;
+		}
+		.banner_imgs li {
+		  /* 一倍的屏幕宽度 */
+		  width: 16.666%;
+		  float: left;
+
+
+		}
+		.banner_imgs li a {
+		  display: block;
+		  width: 100%;
+		}
+		.banner_imgs li a img {
+		  display: block;
+		  width: 100%;
+		}
+		.banner_index {
+		  position: absolute;
+		  bottom: 7%;
+		  left: 32%;
+		  margin-right: 2rem;
+		}
+		.banner_index li {
+		  float: left;
+		  width: 2rem;
+		  height: 2rem;
+		  border: 1px solid white;
+		  border-radius: 50%;
+		  margin: 0 1rem;
+		}
+		.banner_index li.current {
+
+		  background-color: #fff;
+
+		}
+		/***********轮播图结束***********/
+	</style>
+
+</head>
+<body>
+	<div class="img">	
+		<a href="product.html"><i class="iconfont icon-left fh"></i></a>
+	</div>
+
+	<content>
+	<div class="rahmen" style="margin-top:30%;"">
+		<img src="./images/product/0.jpg" alt="">
+		<ul class ="banner_imgs clearfix" style="left:0px;">
+			<li>
+				<a href="#"><img src="./images/product/0.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/product/1.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/product/2.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/product/3.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/product/4.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/product/0.jpg" alt=""></a>
+			</li>
+		</ul>
+		<div class="index">1/5</div>
+	</div>
+	</content>
+
+</body>
+<script>
+	window.onload = function() {
+    slide();
+    rem();
+    // haul();
+	}
+
+	//轮播图
+	function slide() {
+	     // var bannerImgs = document.querySelector(".banner_imgs");		
+	     //跟document.getElementsByClassName('')[]一样的用法
+	     //加All就是获得所有的同样类名的元素
+	     // var flag = 1;
+	    var rahmen = document.getElementsByClassName('rahmen')[0];
+
+	    var bannerImgs = document.getElementsByClassName('banner_imgs')[0];
+
+	    //屏幕宽度
+	    var screenWidth = -(document.body.offsetWidth);
+
+	    var index = 1; 
+
+	    var e;  //手指按下时的位置
+
+	    var b;  //手指离开时的位置
+
+	    var a;  //手指移动的距离
+
+	    var w;  //轮播图移动的位置
+
+	    //添加touch事件 
+	    
+	    //手指按下事件
+	    bannerImgs.addEventListener("touchstart", function(event) {  
+
+	        e = event.changedTouches[0].pageX;
+
+	        w = parseInt(bannerImgs.style.left);
+
+	        // clearInterval(int);
+	    })
+
+	    //手指移动事件
+	    bannerImgs.addEventListener("touchmove", function(event) {
+	        
+	    })
+
+	    //手指离开事件
+	    bannerImgs.addEventListener("touchend", function(event) {
+
+	       b = event.changedTouches[0].pageX;
+	       
+	       a = e - b;
+	       
+	       if(w==0 & e!=b){
+
+	            if(a<0){
+	                document.getElementsByClassName('banner_imgs')[0].style.left = 5*screenWidth +'px';
+
+	                animation(-screenWidth);
+	            }else{
+	                animation(screenWidth);
+	            }
+
+	       }else if(w<4*screenWidth){
+
+	            document.getElementsByClassName('banner_imgs')[0].style.left = 0 +'px';
+
+	            animation(screenWidth);
+	            
+	       }else if( a > -(screenWidth*0.4) && e > b){
+
+	            animation(screenWidth);
+
+	        }else if(a < -(screenWidth*0.4) && e < b){
+
+	            animation(-screenWidth);
+
+	        }
+	        //手指离开后继续执行定时器
+	    //     int = setInterval(function (){
+
+	    //     console.log(parseFloat(bannerImgs.style.left))
+
+	    //     if( parseFloat(bannerImgs.style.left) < 4*screenWidth){
+
+	    //         document.getElementsByClassName('banner_imgs')[0].style.left = 0 +'px';
+
+	    //         animation(screenWidth);
+	    //     }else{
+	    //         animation(screenWidth);
+	    //     }
+	        
+	    // },2000);     
+
+	    })
+
+	//定时器，重复执行动画
+	// var int = setInterval(function (){
+
+	//     console.log(parseFloat(bannerImgs.style.left))
+
+	//     if( parseFloat(bannerImgs.style.left) < 4*screenWidth){
+
+	//         document.getElementsByClassName('banner_imgs')[0].style.left = 0 +'px';
+
+	//         animation(screenWidth);
+	//     }else{
+	//         animation(screenWidth);
+	//     }
+	    
+	// },2000);   
+
+	    function animation(screenWidth){
+
+	        var newLeft = parseInt(bannerImgs.style.left) + screenWidth;
+	        // 移动的终点值
+	        
+	        var time = 500;                         // 位移总时长；
+
+	        var interval = 10;                      // 位移间隔时间
+
+	        var speed = screenWidth/(time/interval);     // 每次位移的距离；
+
+	        //time/interval 得到每次位移一小段的时间，再被screenWidth除，得到每次位移一小段的距离
+	        // console.log(newLeft);
+	        
+	        go();
+	        function go(){
+
+	            var left = parseInt(bannerImgs.style.left);
+	            
+	            tempLeft = left + speed;
+	            //每次要位移到的位置
+
+	            if( speed < 0 && tempLeft > newLeft || speed > 0 && tempLeft < newLeft){
+	            	
+	                        bannerImgs.style.left = tempLeft+'px';
+
+	                        setTimeout(function(){go()}, interval);
+	            }else{
+	                 bannerImgs.style.left = newLeft+'px';
+	                        // showDot();
+	                        // animat = false;     // 动画结束把动画的状态改为false;
+	            }
+	        }
+	    }
+	}
+	rem();
+	function rem() {
+    var a = document.getElementsByTagName('html')[0];
+    //获取根Dow html
+
+    var b = parseInt(getComputedStyle(a,false)['font-size']);
+    //得到html的font-size值
+
+    var c = document.body.offsetWidth;
+    //获取body的宽度，这个不随窗口大小改变而改变
+
+    var f = ( c / 640) * 16;
+    //body宽度
+    console.log(f);
+    document.getElementsByTagName('html')[0].style.fontSize = f+'px';
+
+    window.onresize = function(){
+
+	        var d = document.body.offsetWidth;
+	        //获取body的宽度，这个随窗口大小改变而改变
+
+	        var e = (d / c)*16;
+	        
+	        document.getElementsByTagName('html')[0].style.fontSize = e+'px';
+        
+    	}
+	}
+
+</script>
+</html>

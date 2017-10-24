@@ -1,0 +1,83 @@
+body,html{
+	width: 100%;
+	height: 100;
+	/*overflow: hidden;*/
+}
+.header{
+	background: #61afaf;
+	padding: 0 10rem;
+}
+.header_top{
+	padding: 2rem;
+}
+
+.header_top a{
+	padding: 2rem;
+	float: right;
+}
+.header_top a img{
+	width: 50%;
+}
+.header_text{
+	margin: 0 auto;
+	text-align: center;
+}
+.header_text img{
+	width: 10%;
+	text-align: center;
+}
+.header_text h1{
+	font-weight:lighter;
+}
+.header_text h2,h3{
+	color: #fafafa;
+}
+.header_img{
+	background: url(../img/nemo/hero750.png) no-repeat 100%;
+	background-size: 100% 100%;
+}
+.header_img .btn {
+    width: 200px;
+    background: #007894;
+    border: 1px solid #075f7f;
+    border-bottom: 8px solid #075f7f;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    /*text-shadow: -1px 0 1px #000;*/
+}
+.cmd{
+	padding:5% 0 5% 25%;
+}
+.cmd li{
+	text-align: left;
+}
+.cmd li .cmd-prompt{
+	color: #42FD2E;
+}
+.cmd li .cmd-subject{
+	color: #fafafa;
+}
+.cmd li .cmd-predicate{
+	color: #fffea2;
+}
+.content_Af{
+	background: #cebbad;
+}
+.content_Af_text{
+	 padding: 5rem;
+}
+.content_Bf{
+	background: #d6c6ba;
+}
+footer{
+	width: 100%;
+	background: #463330;
+	padding: 5rem;
+}
+footer .img_left{
+	float: left;
+}
+footer .img_right{
+	float: right;
+}

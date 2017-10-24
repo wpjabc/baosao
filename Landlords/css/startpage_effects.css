@@ -1,0 +1,585 @@
+/*启动页样式*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	overflow:hidden;
+}
+.container{
+	width: 100%;
+	height: 950px;
+	max-width: 2200px;
+	min-width: 600px;
+	position: absolute;
+	background: url(../images/startpage.jpg) no-repeat;
+	background-size: 100%;
+}
+.welcome{
+	width: 100%;
+}
+
+/*按钮爷爷*/
+.btn{
+	width: 12%;
+	height: 60%;
+	display: block;
+	position: relative;
+	margin: 10% 10%;
+	padding: 1%;
+	/*background: rgba(38, 56, 101, 0.75);*/
+	border-radius: 20px;
+	box-shadow: 1px 1px 46px #000;
+	z-index: 10;
+}
+
+/*按钮爸爸*/
+.dot{
+	width: 96%;
+	height: 59%;
+	position: relative;
+	margin: 0 auto;
+	border: 6px dotted #eee;
+	border-radius: 10px;
+	z-index: 20;
+}
+.btn>div.dot a{
+	text-decoration: none;
+}
+
+/*继续游戏，新游戏，关于游戏按钮*/
+.btn>div.dot input:nth-of-type(3){
+	background: -webkit-linear-gradient(top,#8BC34A 38%,#009688 100%);
+}
+
+.btn>div.dot input:hover{
+	cursor:pointer;
+}
+
+.btn>div.dot input:hover{
+	transform: scale3d(1,1,1);
+	background: -webkit-linear-gradient(top,#0b1d7f 38%,#1896a7  100%);
+}
+
+.btn>div.dot input:nth-of-type(3):hover{
+	background: -webkit-linear-gradient(top,#649031 38%,#075851 100%);
+}
+
+.btn>div.dot input:active{
+	background: -webkit-linear-gradient(top,#03A9F4 38%,#3F51B5 100%);
+}
+
+.btn>div.dot .aboutGame:active{
+	background: -webkit-linear-gradient(top,#03A9F4 38%,#3F51B5 100%);
+}
+
+
+
+/*点击新游戏-弹框*/
+/*关闭按钮*/
+.closeRemind{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -7%;
+	right: -4%;
+	border-radius: 37px;
+	box-shadow: -1px 1px 17px;
+	border: none;
+	outline: none;
+	background: url('../images/close.png');
+	background-size: cover;
+	z-index: 999;
+}
+.closeRemind:hover{
+	cursor: pointer;
+	background: url('../images/closehover.png');
+	background-size:cover;
+}
+/*确认按钮*/
+.confirmBtn{
+	width: 34%;
+	height: 1.5em;
+	position:absolute;
+	left: 50%;
+	margin-left: -17%;
+	bottom: 10%;
+	border: none;
+	border-radius: 27px;
+	outline: none;
+	font-size: 2em;
+	color: #fff;
+	background: -webkit-linear-gradient(top,#3F51B5 38%,#00BCD4 100%);
+	box-shadow: -1px -1px 2px #333 inset;
+}
+.confirmBtn:hover{
+	cursor: pointer;
+	background: -webkit-linear-gradient(top,#27326f 38%,#028292 100%);
+}
+
+/*关于游戏弹框*/
+.QA{
+	width: 100%;
+	height: 950px;
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	z-index: 999;
+}
+.QAofGame{
+	width: 25%;
+	display: block;
+	position: absolute;
+	padding-bottom:5%;
+	top: 1%;
+	left: 50%;
+	margin-left: -18%;
+	border-radius: 10px;
+	box-shadow: 1px 1px 10px #333;
+	background: #eee;
+}
+.head{
+	height: 4em;
+	overflow: hidden;
+}
+
+/*关于游戏弹框底下一栏‘关闭’*/
+.closeQA{
+	width:99%;
+	height: 2.5em;
+	display: block;
+	position:absolute;
+	bottom:0.5%;
+	left: 50%;
+	margin-left: -49.5%;
+	background: green;
+	border-radius: 10px;
+	border-top: 1px solid #666;
+}
+.hideQA{
+	display: inline-block;
+	margin-left: 47%;
+	line-height:2.3em;
+	font-size:1em;
+	color: white;
+}
+.closeQA:hover{
+	cursor: pointer;
+	background: red;
+}
+
+@media screen and (max-width:2200px) and (min-width:1401px){
+	/*哈哈斗地主*/
+	.gameName{
+		width:50%;
+		height:10%;
+		display:block;
+		position: absolute;
+		color:#fff;
+		left:50%;
+		margin-left:-2.2em;
+		font-size: 3em;
+	}
+
+	/*继续游戏，新游戏，关于游戏按钮*/
+	.btn>div.dot input{
+		width: 84%;
+		height: 2em;
+		display:block;
+		position: relative;
+		margin: 72px auto;
+		margin-top: 40%;
+		font-size: 1.7em;
+		color: #fff;
+		border:none;
+		border-radius: 30px;
+		outline: none;
+		background: -webkit-linear-gradient(top,#3F51B5 38%,#00BCD4  100%);
+		box-shadow: 0px  1px 5px #2a2727;
+		z-index: 30;
+		transform: scale3d(0.9,0.9,1);
+		-webkit-transition: transform 0.3s;
+		transition: transform 0.1s;
+	}
+	
+	/*点击继续游戏-弹框*/
+	.continueCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.continue{
+		width: 400px;
+		height: 106px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: url('../images/notice_bg.png') no-repeat;
+		background-size: 100%;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+	
+
+	/*点击新游戏弹出提示框*/
+	.remindCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.remind{
+		width: 400px;
+		height: 106px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: url('../images/notice_bg.png') no-repeat;
+		background-size: 100%;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+	
+
+	/*弹框文字*/
+	.remindText{
+		color: #000836;
+		font-size: 1.5em;
+		line-height: 1.4em;
+	}
+	.head{
+		height: 4em;
+		overflow: hidden;
+	}
+	/*关于游戏标题*/
+	.title{
+		height: 37em;
+		margin-top: -172%;
+		text-align:center;
+		line-height: 71em;
+		font-size: 1.5em;
+		color: #fff;
+		background: #ff7100;
+		border-radius: 30em;
+		cursor: default;
+		overflow: hidden;
+	}
+
+	/*农民地主图片div*/
+	.playerPic{
+		width: 50%;
+		height: 400px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		margin-left: -22%;
+		top: 38%;
+	}
+	.imgBoss{
+		width:40%;
+		display:inline-block;
+		position:absolute;
+		margin: 0% 2%;
+	}
+
+}@media screen and (max-width:1400px) and (min-width:1201px){
+	/*哈哈斗地主*/
+	.gameName{
+		width:50%;
+		height:10%;
+		display:block;
+		position: absolute;
+		color:#fff;
+		left:50%;
+		margin-left:-2.2em;
+		font-size: 3em;
+	}
+
+	/*继续游戏，新游戏，关于游戏按钮*/
+	.btn>div.dot input{
+		width: 84%;
+		height: 2em;
+		display:block;
+		position: relative;
+		margin: 72px auto;
+		margin-top: 40%;
+		font-size: 1.7em;
+		color: #fff;
+		border:none;
+		border-radius: 30px;
+		outline: none;
+		background: -webkit-linear-gradient(top,#3F51B5 38%,#00BCD4  100%);
+		box-shadow: 0px  1px 5px #2a2727;
+		z-index: 30;
+		transform: scale3d(0.9,0.9,1);
+		-webkit-transition: transform 0.3s;
+		transition: transform 0.1s;
+	}
+	
+	/*点击继续游戏-弹框*/
+	.continueCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.continue{
+		width: 400px;
+		height: 106px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: url('../images/notice_bg.png') no-repeat;
+		background-size: 100%;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+	
+
+	/*点击新游戏弹出提示框*/
+	.remindCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.remind{
+		width: 400px;
+		height: 106px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: url('../images/notice_bg.png') no-repeat;
+		background-size: 100%;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+	
+
+	/*弹框文字*/
+	.remindText{
+		color: #000836;
+		font-size: 1.5em;
+		line-height: 1.4em;
+	}
+	.head{
+		height: 4em;
+		overflow: hidden;
+	}
+	/*关于游戏标题*/
+	.title{
+		height: 27em;
+		margin-top: -172%;
+		text-align:center;
+		line-height: 51em;
+		font-size: 1.5em;
+		color: #fff;
+		background: #ff7100;
+		border-radius: 30em;
+		cursor: default;
+		overflow: hidden;
+	}
+
+	/*农民地主图片div*/
+	.playerPic{
+		width: 50%;
+		height: 400px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		margin-left: -22%;
+		top: 38%;
+	}
+	.imgBoss{
+		width:40%;
+		display:inline-block;
+		position:absolute;
+		margin: 0% 2%;
+	}
+
+}
+@media screen and (max-width:1200px){
+	/*哈哈斗地主*/
+	.gameName{
+		width:50%;
+		height:10%;
+		display:block;
+		position: absolute;
+		color:#fff;
+		left:50%;
+		margin-left:-2.2em;
+		font-size:2em;
+	}
+
+	/*继续游戏，新游戏，关于游戏按钮*/
+	.btn>div.dot input{
+		width: 84%;
+		height: 1.8em;
+		display:block;
+		position: relative;
+		margin: 72px auto;
+		margin-top: 40%;
+		font-size: 1.3em;
+		color: #fff;
+		border:none;
+		border-radius: 30px;
+		outline: none;
+		background: -webkit-linear-gradient(top,#c89720 38%,#de4200  100%);
+		box-shadow: 0px  1px 5px #2a2727;
+		z-index: 30;
+		transform: scale3d(0.9,0.9,1);
+		-webkit-transition: transform 0.3s;
+		transition: transform 0.1s;
+	}
+	
+	/*点击继续游戏-弹框*/
+	.continueCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.continue{
+		width: 320px;
+		height: 130px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: #024157;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+
+	/*点击新游戏弹出提示框*/
+	.remindCover{
+		width: 100%;
+		height: 950px;
+		position: absolute;
+		font-size: 1em;
+		transform: scale(0);
+		background: rgba(0,0,0,0.5);
+		z-index: 999;
+	}
+	.remind{
+		width: 300px;
+		height: 130px;
+		position: relative;
+		padding: 3% 1%;
+		margin: 18% auto;
+		text-align:center;
+		background: #024157;
+		border: 4px solid #aaa;
+		border-radius: 10px;
+		box-shadow: 1px 1px 120px #000;
+	}
+
+	/*弹框文字*/
+	.remindText{
+		color:#fff;
+		line-height: 2em;
+		font-size: 1.2em;
+	}
+	
+	/*关于游戏弹框*/
+	.QAofGame{
+		height: 0em;
+	}
+	
+	.QAofGame .QAPanel{
+		padding: 1%;
+	}
+
+	.QAPanel p,li{
+		font-size: 1em;
+		padding: 1%;
+	}
+
+	/*关于游戏标题*/
+	.title{
+		height: 3em;
+		text-align:center;
+		line-height:3em;
+		font-size: 0.75em;
+		background: #ff7100;
+		border-radius: 10px;
+		border-bottom: 1px solid #666;
+		cursor: default;
+	}
+
+	/*农民地主图片div*/
+	.playerPic{
+		width: 50%;
+		height: 400px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		margin-left: -22%;
+		top: 38%;
+	}
+	.imgBoss{
+		width:25%;
+		display:inline-block;
+		position:absolute;
+		margin: 0% 2%;
+	}
+
+}
+@media screen and (max-width:900px){
+	/*继续游戏，新游戏，关于游戏按钮*/
+	.btn>div.dot input{
+		width: 84%;
+		height: 1.3em;
+		display:block;
+		position: relative;
+		margin: 72px auto;
+		margin-top: 40%;
+		font-size: 1.1em;
+		color: #fff;
+		border:none;
+		border-radius: 30px;
+		outline: none;
+		background: -webkit-linear-gradient(top,#c89720 38%,#de4200  100%);
+		box-shadow: 0px  1px 5px #2a2727;
+		z-index: 30;
+		transform: scale3d(0.9,0.9,1);
+		-webkit-transition: transform 0.3s;
+		transition: transform 0.1s;
+	}
+	.remindText{
+		font-size: 1em;
+	}
+	
+	/*关于游戏弹框*/
+	.QAofGame{
+		height: 0em;
+	}
+	.QAofGame .QAPanel{
+		padding: 1%;
+	}
+
+	/*关于游戏弹框文字*/
+	.QAPanel p,li{
+		font-size: 0.75em;
+	}
+}

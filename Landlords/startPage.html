@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>斗地主启动页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/startpage_effects.js"></script>
+	<link rel="stylesheet" href="./css/startpage_effects.css">
+	<script>
+		$(function(){
+
+			var continueGame = $('.continueGame');
+			var newGame = $('.newGame');
+			var aboutGame = $('.aboutGame');
+
+			var continueCover = $('.continueCover');
+			var remindCover = $('.remindCover');
+
+			var start = new startPage(continueGame, newGame, aboutGame);
+
+		})
+	</script>
+</head>
+<body>
+	<!-- 斗地主背景音乐 -->
+	<audio class="bgm" src="./audio/bgm.mp3" autoplay="true"></audio>
+	<div class="container">
+		<div class="welcome" style="position:absolute">
+		<div class="gameName" style="">死神斗地主</div>
+			<div class="btn">
+				<div class="dot">
+					<input class="continueGame" type="button" value="继续游戏">
+					<input class="newGame" type="button" value="新游戏">
+					<input class="aboutGame" type="button" value="关于游戏">
+				</div>
+			</div>
+			<!-- 农民地主人物图片 -->
+			<div class="playerPic">
+				<img class="imgBoss" src="./images/pic_boss.png" alt="" >
+			</div>
+		</div>
+		<!-- 点击继续游戏弹框 -->
+		<div class="continueCover">
+			<div class="continue">
+				<p class='remindText'>没有游戏记录，马上开始游戏吧！</p>
+				<!-- 关闭按钮 -->
+				<input class="closeRemind" type="button">
+				<input class="confirmBtn" type="button" value="新游戏">
+			</div>
+		</div>
+		<!-- 点击‘新游戏’弹出提醒框 -->
+		<div class="remindCover">
+			<div class="remind">
+				<p class='remindText'>开始新游戏将删除之前的游戏<br />
+				记录，是否开始新的游戏?</p>
+				<!-- 关闭按钮 -->
+				<input class="closeRemind" type="button">
+				<input class="confirmBtn" type="button" value="确认">
+			</div>
+		</div>
+		<!-- ‘关于游戏’弹框 -->
+		<div class="QA" style="transform:scale(0);">
+			<div class="QAofGame" style="height: 0em">
+				<li class="head"><h2 class='title'>关于游戏</h2></li>
+				<ul style="line-height: 2em;padding: 1%;margin: 0 auto">
+					<li class="QAPanel">
+						<p>这是2017年8月29日的第二个版本，斗地主游戏的启动页面部分。<br/>
+							<h4>项目初次分工：</h4>陈志豪：样式，效果等<br />王培杰：牌型等<br />刘志旺：出牌算法等
+						</p>
+						<h3 style="margin:2% 0;border-top:1px solid #666;">游戏规则:</h3>
+						<li>连对：三对6张以上连续；同类型出牌</li>
+						<li>顺子：五张以上连续; 同类型出牌</li>
+						<li>飞机：六张两个三张；同类型出牌</li>
+						<li>炸弹：四张一样的一次出；除了大于它的炸，可炸任意牌型</li>
+						<li>王炸：大王小王一起出，最大牌</li>
+					</li>
+				</ul>
+				<!-- 关于游戏弹框底下一栏 -->
+				<li class="closeQA">
+					<!-- 关闭按钮 -->
+					<p class="hideQA">关闭</p>
+				</li>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

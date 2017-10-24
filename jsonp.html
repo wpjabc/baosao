@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ 	<script src="jquery-3.2.1.min.js"></script>
+ </head>
+ <body>
+ 	<div>hello wrod</div>
+ </body>
+ <script>
+   $.getJSON("http://localhost:3000/js/ware.js?callback=?",function(data){
+        alert(data);
+    });
+
+  $.ajax({
+
+        url:"http://localhost:3000/js/ware.js?callback=?", 
+
+        dataType:"jsonp",
+
+        jsonpCallback:"person",
+
+        success:function(data){
+
+            // alert(data);
+            console.log(data);
+        }
+
+   })
+
+  for (var i = 0; i < 3; i++) {
+  	(function (j){
+
+	    setTimeout(function () {
+	      console.log(j)
+	    }, 1000);
+  	}(i));
+}
+ </script>
+ </html>

@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+img{
+    outline-width:0px;   
+    vertical-align:top;   
+}
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td { margin: 0; padding: 0; }
+img { border: 0 none; vertical-align: center; padding:0; margin:0;}
+ul, li { list-style-type: none; margin:0px; padding:0px; border:none;}
+h1, h2, h3, h4, h5, h6 { font-size: 2.2rem; }
+body, input, select, button, textarea { font-size: 1.2rem; font-family:"黑体";  }
+button { cursor: pointer; }
+i, em, cite { font-style: normal; }
+aside section,.body{display:block; width:1000px; margin:0 auto;}
+a, a:link { color: #000; text-decoration: none; }/*设置a标签基本样式与伪类选择器设置*/
+a:visited {}
+a:active, a:hover { text-decoration: none; color:#d00000; }
+a:focus { outline: none; } 
+
+.orange { color:#F26E01;}
+
+.clear {
+	clear:both;
+}
+
+.header {
+    border: 1px solid red;
+    padding: 15px;
+}
+.row{
+    margin:0;
+}
+.row:after {
+    content: "";
+    clear: both;
+    display: block;   
+}
+img, video {
+
+	width: 100%;
+	height: auto;
+}
+
+/*写法是class属性值中包含了col-的元素都选中*/
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /*border: 1px solid #ccc;*/
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
+
+.body{
+    max-width: 980px;
+    margin:0 auto;
+}
+
+/*===================== 公共样式 =========================*/

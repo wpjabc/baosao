@@ -1,0 +1,19 @@
+.content_AF_text{
+	width:720px;
+	height:410px;
+	float:right;
+	margin:15px 0 0 0;
+}
+.content_AF{
+	width:1000px;
+	height:410px;
+	margin:0 auto;
+}
+.text_content{
+	height:318px;
+}
+.text_content p{
+	width:720px;
+	line-height: 1.8;
+	margin:0 0 16px 0;
+}

@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Page-Enter" Content="revealTrans(duration=5, transition=3)">
+	<meta http-equiv="Page-Exit" Content="revealTrans(duration=1, transition=2)"> 
+<head>
+	<title>斗地主1011ddz</title>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<!-- 一些特效js文件 -->
+	<script type="text/javascript" src="./js/startpage_effects.js"></script>
+	<script type="text/javascript" src="./js/index1.js"></script>
+	<script type="text/javascript" src="./js/playgame.js"></script>
+	<script type="text/javascript" src="./js/seemore.js"></script>
+	<script type="text/javascript" src="./js/hint.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*****************************获取元素对象**************************************/
+			//声明牌堆对象
+			var $all_poker = $('.all_poker');
+			var $all_poker_li = $('.all_poker li');
+
+			//声明玩家对象
+			var $play = {
+				$play_1:$('.play_1'), 
+				$play_2:$('.play_2'), 
+				$play_3:$('.play_3')
+			}
+
+			//声明按钮主键
+			var $btn = $('.btn');				//大容器，子集（btn_land，btn_no）
+			var $btn_land = $('.btn_land');		//按钮 btn_land
+			var $btn_no = $('.btn_no');			//按钮 btn_no
+
+			//声明出牌时的按钮主键
+			var $action = $('.action');	
+
+			/*****************************初始化页面元素数据*******************************/
+			var click = 0;			//定义一个开始洗牌时点击次数的值
+
+			//初始化牌堆数据
+			/*
+				由于扑克牌每张牌包含了两种数据，所以我们在设计数据结构是需要把一个数据看成两个值。
+				所以我们可以把数据设计成这样 方块1 => 1_0  梅花1 => 1_1
+				数据结构为 点数_花色
+			 */
+			var all_poker_data = [];
+
+			//初始化玩家数据
+			//由于玩家数据可能有很多个不同方向的内容，所以我们使用对象的数据类型进行保存（role：0 为农民身份，1为地主身份）
+			var all_play = {
+			 	play_1 : {name:'杰哥', integral:1000, role:0, poker:[]},
+				play_2 : {name:'豪哥', integral:1000, role:0, poker:[]},
+				play_3 : {name:'旺哥', integral:1000, role:0, poker:[]}
+			};
+
+			//玩家准备出的牌详细内容。poker选牌具体数据，type是牌型类型，max是该牌型用于判断大小的判断值
+			var ready_poker = {poker:[], type:0, max:0};
+
+			var desktop_poker = {poker:[], type:0, max:0}	// 初始化玩家桌面上的牌型
+
+			var game_status = {boss:-1, player:-1, cancle:0}		//初始化当游戏的状态	
+
+
+			/************************************面向对象函数，封装****************************/
+			var initialize  = new Initialize($all_poker, all_poker_data, all_play);
+
+			$('body').on('click', '.all_poker li', function(){
+				//通过父级元素进行绑定，防止因为目标元素删除或者修改而导致事件的失效。
+				
+				// 暂停背景音乐
+				// $('.bgm').attr('src','0');
+
+				if(click <= 0){
+					initialize.clearPoker();	//调用洗牌方法
+					click++;		//增加点击次数
+				}else{
+					$('body').off('click', '.all_poker li') //移除click绑定事件
+					initialize.initElements();
+
+					$('body').off('click', '.all_poker li') //移除click绑定事件
+					setTimeout(function(){			//调用随机叫地主的玩家的方法
+						var all_poker_data = initialize.saveData();	//保存的当前牌堆数据 all_poker_data
+						// console.log(all_poker_data);
+						var playgame  = new PlayGame($all_poker, all_poker_data, all_play);
+						playgame.initElements();
+					},5500);
+				}
+			});
+			
+			var GameInfoMore = $('.gameInfoMore');
+			var gameInfo = $('.gameInfo');
+
+			new look(GameInfoMore, gameInfo);
+
+			
+		});
+	</script>
+	<link rel="stylesheet" href="./css/index1.css">
+</head>
+<body ondragstrat="return false">
+	<div class="">
+	</div>
+	<!-- 斗地主背景音乐 -->
+	<audio class="bgm" src="./audio/bgm.mp3" autoplay="true" loop="true"></audio>
+<div class="alertNotice">Tips:   点击牌堆开始洗牌!<br />点击右下角“看看”了解更多！</div>
+<div class="left">
+	<ul class="play_1">
+		<!-- 头像 -->
+		<div class="player">
+			<span class="playerPic1"></span>
+			<p>豪哥</p>
+		</div>
+		<div class="btnAction">
+			<p class="btn">
+				<a href="#" class="btn_land">叫地主<a/>
+				<a href="#" class="btn_no">不叫<a/>
+			</p>
+			<p class="action">
+				<span class="second_show"></span>
+				<input class="pass" type="button" value="不要">
+				<input type="button" name="" value="出牌">
+				<input type="button" name="" value="提示">
+				<!-- 点击‘不要’弹出提示 -->
+				<div class="pass_remind1">
+					<div></div>
+					<p>不要</p>
+				</div>
+			</p>
+		</div>
+	</ul>
+	<!-- 玩家1出牌位置 -->
+	<div class="desktop_poker1" style="width:200px;height:100px;position:absolute;top:50%;margin-top:-122px;left:28%"></div>
+</div>
+<div class="mid">
+	<div class="mid_top">
+		<img class="platform" src="./images/platform.png" alt="" >
+		<table class="integral" cellspacing="0">
+			<tr class="player" value="积分榜">
+				<th>底分</th>
+				<th>豪哥</th>
+				<th>杰哥</th>
+				<th>旺哥</th>
+			</tr>
+			<tr class="score">
+				<td>10</td>
+				<td>积分1000</td>
+				<td>积分1000</td>
+				<td>积分1000</td>
+			</tr>
+		</table>
+		<ul class="all_poker">
+			<li class="back"></li>
+		</ul>
+		<!-- 玩家2出牌位置 -->
+		<ul class="desktop_poker" style=""></ul>
+		<!-- 积分 -->
+		<div class='score'></div>
+	</div>
+	<div class="mid_end">
+		<ul class="play_2">
+			<!-- <li style="width: 125px; height: 175px; background: url(./images/14.png) -162px -5px;"></li> -->
+			<!-- 头像 -->
+			<div class="player">
+				<span class="playerPic2"></span>
+				<p>杰哥</p>
+			</div>
+			<div class="btnAction">
+				<p class="btn">
+					<a href="#" class="btn_land">叫地主<a/>
+					<a href="#" class="btn_no">不叫<a/>
+				</p>
+				<p class="action">
+					<span class="second_show"></span>
+					<input class="pass" type="button" value="不要">
+					<input type="button" name="" value="出牌">
+					<input type="button" name="" value="提示">
+					<!-- 点击‘不要’弹出提示 -->
+					<div class="pass_remind2">
+						<div></div>
+						<p>不要</p>
+					</div>
+				</p>
+			</div>
+		</ul>
+	</div>
+	<!-- 洗牌时候阻止点击的蒙层 -->
+	<div class="noClick"></div>
+</div>
+<div class="right">
+	<ul class="play_3">
+		<div class="player">
+				<span class="playerPic3"></span>
+				<p>旺哥</p>
+			</div>
+		<div class="btnAction">
+			<p class="btn">
+				<a href="#" class="btn_land">叫地主<a/>
+				<a href="#" class="btn_no">不叫<a/>
+			</p>
+			<p class="action">
+				<span class="second_show"></span>
+				<input class="pass" type="button" value="不要">
+				<input type="button" name="" value="出牌">
+				<input type="button" name="" value="提示">
+				<!-- 点击‘不要’弹出提示 -->
+				<div class="pass_remind3">
+					<div></div>
+					<p>不要</p>
+				</div>
+			</p>
+		</div>
+	</ul>
+	<!-- 玩家3出牌位置 -->
+	<div class="desktop_poker3" style="width:140px;height:200px;position:absolute;top:50%;margin-top:-122px;right:26%"></div>
+	</div>
+	<!-- 有玩家或地主赢了 -->
+		<div class="win">
+			<div>
+				<input class="quit_game" type="button" value="退出">
+				<input class="continue_game" type="button" value="继续游戏">
+			</div>
+		</div>
+
+	<!-- 炸弹效果开始 -->
+	<ul style="display:block">
+		<!-- 炸弹，王炸 -->
+		<li class="boom" style="width:99%;height:200px;position:absolute;top:-60%;z-index:999">
+			<img class="boom0" style="width:260px;height:260px;display:inline-block;position:absolute;left:85%; top:0%;z-index:999" src="./images/boom0.png" alt="" value="0">
+			<img class="boom1" style="width:260px;height:260px;display:inline-block;position:absolute;left:85%; top:0%;z-index:999" src="./images/boom1.png" alt="" value="1">
+			<img class="boom2" style="width:260px;height:260px;display:inline-block;position:absolute;left:85%; top:0%;z-index:999" src="./images/boom2.png" alt="" value="2">
+
+			<!-- 爆炸 -->
+			<img class="bigBoom" src="./images/boom3.png" alt="" style="width:50%;top:332%;left:50%;margin-left:-34%;position:absolute;transform:scale(0);z-index:'999';">
+
+			<!-- 王炸 -->
+			<img class="kboom" src="./images/kboom.png" alt="" style="width:40%;top:385%;left:50%;margin-left:-30%;position:absolute;transform:scale(0);">
+			<li class="audioBoom"></li>
+		</li>
+		<!-- 炸弹效果结束 -->
+	</ul>
+
+	<!-- 飞机开始 -->
+	<ul class="aircraft" style="width:100%;height:1px;top:3%;left:0%;position:absolute;overflow: hidden;z-index:999">
+		<img src="./images/aircraft.png" alt="" style="width:700px;height:300px;left:100%;top:26%;position:absolute;z-index:999;">
+	</ul>
+	<!-- 飞机结束 -->
+
+	<!-- 赢了 开始-->
+	<ul class="won" style="width:99%;height:700px;position:absolute;top:22%;z-index:-1">
+		<img class="firework0" src="./images/firework0.png" alt="" style="width:300px;height:300px;top:-6%;left:50%;margin-left:-174px;position:absolute;z-index:999;transform:scale(0)">
+		<img class="firework1" src="./images/firework1.png" alt="" style="width:500px;height:600px;top:0%;left:50%;margin-left:-25%;position:absolute;z-index:999;transform:scale(0)">
+		<img class="firework2" src="./images/firework2.png" alt="" style="width:500px;height:600px;top:-10%;left:50%;margin-left:-1%;position:absolute;z-index:999;transform:scale(0)">
+		<img class="firework3" src="./images/firework3.png" alt="" style="width:500px;height:600px;top:-8%;left:50%;margin-left:-411px;position:absolute;z-index:999;transform:scale(0)">
+	</ul>
+	<!-- 赢了 结束 -->
+	<div>
+		<!-- 洗牌声音 -->
+		<audio class="clearPokerSound" src="./audio/clearpoker.mp3">
+		<!-- 发牌声音 -->
+		<audio class="dealPokerSound" src="./audio/dealpoker.mp3">
+		<!-- 不叫 声音-->
+		<audio class="notcall_boss" src="./audio/notcall_boss.wav">
+		<!-- 叫地主声音 -->
+		<audio class="ask_boss" src="./audio/ask_boss.wav">
+		<!-- 抢地主声音 -->
+		<audio class="call_boss" src="./audio/call_boss.wav">
+		<!-- 赢了 -->
+		<audio class="win1" src="./audio/win.mp3">
+	</div>
+	
+	<div>
+		<a class="gameInfo" type="botton" value="">看看</a>
+	</div>
+
+	<!-- 游戏简介弹框 -->
+	<div class="gameInfoMore">
+		<ul style="height: 4em;line-height: 2em;padding: 1%;margin: 0 auto">
+			<li class='title' style=""><h2>游戏规则</h2></li>
+		</ul>
+		<ul class="QAPanel">
+			
+			<p>这是2017年8月29日的第二个版本，斗地主游戏的启动页面部分。<br/>
+				<h4>项目初次分工：</h4>陈志豪：样式，效果等<br />王培杰：牌型等<br />刘志旺：出牌算法等
+			</p>
+			<h3 style="margin:2% 0;border-top:1px solid #666;">Tips：</h3>
+			<p>1、双击鼠标左键，快速将所有牌放下。<br />
+			</p>
+			<h3 style="margin:2% 0;border-top:1px solid #666;">游戏规则:</h3>
+			<li>连对：三对6张以上连续；同类型出牌</li>
+			<li>顺子：五张以上连续; 同类型出牌</li>
+			<li>飞机：六张两个三张；同类型出牌</li>
+			<li>炸弹：四张一样的一次出；除了大于它的炸，可炸任意牌型</li>
+			<li>王炸：大王小王一起出，最大牌</li>
+		</ul>
+		<!-- 游戏简介弹框底下一栏 -->
+		<li class="closePanel">
+			<!-- 关闭按钮 -->
+			<p class="hidePanel">关闭</p>
+		</li>
+	</div>
+</body>
+<script>
+	/************************ 屏蔽浏览器右击菜单************************/
+    if (window.Event)
+        window.document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(event){
+        event.cancelBubble = true;
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(event){
+        if (window.Event){
+            if (event.which == 2 || event.which == 3)
+                return false;
+        }
+        else
+        if (event.button == 2 || event.button == 3){
+            event.cancelBubble = true;
+            event.returnValue = false;
+            return false;
+        }
+    }
+    window.document.oncontextmenu = nocontextmenu; // for IE5+
+    window.document.onmousedown = norightclick; // for all others
+    /************************** 屏蔽浏览器右击菜单 end*********************/
+</script>
+</html>

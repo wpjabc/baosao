@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>闭包2</title>
+	<script type="text/javascript">
+		// var f = function(func){
+		//     console.log("I'll call a pass-in function with some arguments.");
+		//     func("this", "is", "your data");
+		// };
+
+		// f(function(a, b, c, d){
+		//   console.log("my arguments are:", a, b, c, d);
+		// });
+
+		var obj = {
+		    data: 456,
+		    f: function(func) {
+		        console.log("I'll call a pass-in function with some arguments.");
+		        func(obj.data);
+		        console.log("after");
+		    }
+		};
+
+		obj.f(function(a) {
+		    console.log("my arguments are:", a);
+		});
+
+
+		function forTimeout(x, y){
+		    alert(x + y);
+		}
+
+		// function delay(x , y  , time){
+		//     setTimeout('forTimeout(' +  x + ',' +  y + ')' , time);    
+		// }
+		// delay(1, 2, 1000);
+
+
+		 // 上面的delay函数十分难以阅读，也不容易编写，但如果使用闭包就可以让代码更加清晰
+		//  function delay(x , y , time){
+		//      setTimeout(function(){
+		//              forTimeout(x , y) 
+		//          }, time);   
+		//  }
+		
+		// delay(1, 2, 1000);
+
+		// $($.Ajax.function(json){
+
+		// })
+	</script>
+</head>
+<body>
+
+</body>
+</html>

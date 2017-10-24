@@ -1,0 +1,364 @@
+
+/*===================== 头部样式开始 =========================*/
+img{
+    outline-width:0px;   
+    vertical-align:top;   
+}
+.head{
+    position: relative;
+	width:100%;
+	/*height:27rem;*/
+}
+.login{
+	width:100%;
+}
+.slideshow {
+	width:100%;
+    overflow: hidden;
+}
+.slideshow ul{
+    width:500%;
+}
+.slideshow ul li{
+    width:20%;
+    float:left;
+    padding:0;
+    margin:0;
+    display:inline-block;
+}
+
+.login{
+    position: relative;
+    /*background:rgba(208, 0, 0, 0.72); */
+    /*background:#000;*/
+    position: fixed;
+    /*box-shadow: 0px 36px 236px #000*/
+    /*max-width:980px;*/
+    z-index:999;
+}
+.login>input{
+    border-radius:3.8rem;
+    height: 3.8rem;
+    font-size: 1.8rem;
+    line-height: 3.8rem; 
+    opacity:1;
+    color:#999;
+    padding:0.5rem 1rem 0.5rem 4rem;
+}
+.login>a{
+    font-size: 2.5rem;
+    color:#fff;
+    opacity:1;
+    padding:0.3rem 0 0 6rem;
+}
+
+/***********轮播图开始***********/
+.slider{
+    overflow: hidden;
+    position: relative;
+}
+.rahmen{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    background:#eee;
+}
+.rahmen>img{
+    width:100%;
+    opacity: 0;
+}
+.banner_imgs {
+  /* 6倍屏幕宽度 */
+  width: 600%;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+.banner_imgs li {
+  /* 一倍的屏幕宽度 */
+  width: 16.666%;
+  float: left;
+
+
+}
+.banner_imgs li a {
+  display: block;
+  width: 100%;
+}
+.banner_imgs li a img {
+  display: block;
+  width: 100%;
+}
+.banner_index {
+  position: absolute;
+  bottom: 7%;
+  left: 32%;
+  margin-right: 2rem;
+}
+.banner_index li {
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+.banner_index li.current {
+
+  background-color: #fff;
+
+}
+/***********轮播图结束***********/
+
+/*===================== 头部样式结束 =========================*/
+
+/*===================== 主体样式开始 =========================*/
+
+.content{
+    margin:-0.34rem 0 0 0;
+}
+
+.content>.content_nav{
+    background: url(../images/59ae6eaeN32aba37b.jpg) no-repeat center;
+    background-size: 100%;
+   /* height: 286px;*/
+}
+/*.content>.content_nav>ul{
+    height:140px;
+}*/
+.content_img{
+
+    padding:0 0 0 0;
+}
+.content_img>a>img{
+
+    padding:0 0 0 0;
+    float:left;
+}
+.content>.content_nav>ul li{
+    width:20%;
+    padding:0px 40px 0 40px;
+    float:left;
+    text-align:center;
+    font-size: 1.5rem;
+    line-height: 50px;
+    color:#fafafa;
+}
+.content>.content_nav>ul>li>img{
+    padding:0;
+}
+.content_Af>img{
+    float:left;
+}
+.content_Af>b{
+    float:left;
+    font-size: 1.8rem;
+    line-height: 7rem;
+}
+.content_Af>p{
+    float:right;
+    font-size: 1.5rem;
+    line-height: 50px;
+    padding:15px 0px 15px 0;
+    color: #f23030;
+
+}
+.content_Bf{
+    overflow: hidden;
+    /*margin-left:100%;*/
+    position:relative;
+}
+.content_Bf>a>img{
+    width:33%;
+    opacity:0;
+}
+.content_Bf>ul{
+    
+    width:300%;
+    position:absolute;
+    top:0;
+    /*margin-left:-100%;*/
+}
+
+.content_Bf>ul li{
+    width:10%;
+    float:left;
+    font-size: 1.8rem;
+    text-align:center;
+}
+.content_Bf>ul>li span{
+    font-size: 1.8rem;
+   color: #f23030;
+}
+.content_Bf>ul>li p{
+    font-size: 1.8rem;
+    color: #999;
+} 
+.content_Bf>ul>li img{
+    padding: 0 1rem 0 1rem;
+    border-right: 1px solid #ccc;
+}
+.content_Cf>div{
+    font-size: 1.8rem;
+    border: 1px solid #ccc;
+}
+.content_Cf h1{
+    font-size: 2.2rem;
+    color:#333;;
+}
+.content_Cf p{
+    font-size: 1.8rem;
+    color: #999;
+}
+.content_Cf img{
+    width:60%;
+    float:right;
+    padding: 10px;
+}
+.content_Cf_img img{
+    width:100%;
+}
+.content_Cf_max img{
+    width:40%;
+}
+#longimg{
+    width:52.8%;
+}
+#longimg1{
+    width:47.5%;
+}
+#longimg2{
+    width:85.8%;
+}
+#longimg3{
+    width:50%;
+}
+#longimg4{
+    width:100%;
+    padding:0;
+}
+#longimg5{
+   width:112.5%;  
+}
+.content_Df{
+    background:url(../images/floor-tit.png) no-repeat center;
+    background-size: 100% 100%;
+    padding:0;
+}
+.content_Df img{
+    width:20%;
+    margin:0 20% 0 40%;
+}
+.content_Df a{
+    font-size:2.1rem;
+    text-align:right;
+    line-height: 6rem;
+
+}
+.content_Ef div{
+    border: 1px solid #ccc;
+}
+.content_Ef h1{
+    font-size: 2.2rem;
+    color:#333;;
+}
+.content_Ef p{
+   font-size: 1.8rem;
+   color: #999;
+}
+.font_bg{
+    background: #2dbbfc;
+    color: #fff;
+}
+.font_bg1{
+    background: #7a44fb;
+    color: #fff;
+}
+.font_bg2{
+    background: #ff4a7d;
+    color: #fff;
+}
+.conten_bottom{
+    position:relative;
+    padding:0;
+}
+.conten_bottom>.img_mask{
+    display:inline-block;
+    width:100%;
+    height:8.6rem;
+    background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    top:19rem;
+    /*left:1rem;*/
+    color: #fff;
+    font-size:2.5rem;
+    line-height: 11rem;
+    /*float:left;*/
+    position:absolute;
+   /* margin: 60% 0 0 0;*/
+}
+/*===================== 主体样式结束 =========================*/
+
+/*===================== 底部样式开始 =========================*/
+
+.floor{
+    background:#f1f1f1;
+    clear:both;
+}
+
+.floor_nav>li{
+    font-size:2rem;
+    text-align:center;
+    border-right: 1px solid #ccc;
+    margin:2.8rem 0 0 0;
+}
+.floor_nav{
+    height:9rem;
+    border-top: 0.2rem solid #ccc;
+    border-bottom: 0.2rem solid #ccc;
+}
+
+.floor_ver{
+    height:7rem;
+    border-bottom: 0.2rem solid #ccc;
+}
+
+.floor_ver>li{
+    font-size:1.8rem;
+    text-align:center;
+    border-right: 1px solid #ccc;
+    margin:1.8rem 0 1.8rem 0; 
+}
+.floor>p{
+    font-size:1.8rem;
+    text-align:center;
+    color:#ff4a7d;
+    padding:2rem;
+}
+.bottom_nav1{
+    background:#fafafa;
+    bottom:0;
+    box-shadow: 0 0 1rem #888;
+}
+.bottom_nav1>ul li{
+    width:20%;
+    float:left;
+}
+.bottom_nav1>ul li img{
+    width:80%;
+}
+.bottom_nav{
+    background:#fafafa;
+    position: fixed;
+    max-width:1000px;
+    bottom:0;
+    box-shadow: 0 0 20px #888;
+}
+.bottom_nav>ul li{
+    width:20%;
+    float:left;
+}
+.bottom_nav>ul li img{
+    width:80%;
+}
+
+/*===================== 底部样式结束 =========================*/

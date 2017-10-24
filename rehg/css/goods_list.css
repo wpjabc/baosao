@@ -1,0 +1,87 @@
+.content{
+	width:100%;
+	
+}
+.content_AF{
+	width:1000px;
+	height:1019px;
+	margin:0 auto;
+}
+.content_AF_text{
+	width:720px;
+	height:958px;
+	float:right;
+	overflow:hidden;
+	margin:15px 0 0 0;
+	
+}
+/*===============左侧菜单开始===================**/
+.content_AF .active{
+	width:239px;
+	height:173px;
+}
+.content_AF .active>a{
+	color:#d9131e;
+}
+.active_menu{
+	width:239px;
+	height:128px;
+	padding:0 0 20px 25px;
+}
+.active_menu li{
+	width:214px;
+	height:26px;
+	line-height:26px;
+	font-size:12px;
+}
+.active_menu li a{
+	display:inline-block;
+	width:214px;
+	height:26px;
+	color:#7F7F7F;
+}
+.active_menu li a:hover{
+	color:#d9131e;
+}
+
+/*===============左侧菜单结束===================**/
+
+
+
+/*=============商品列表模块样式开始==============*/
+.content_AF_text img{
+	width:225px;
+	height:225px;
+	transition:0.4s;
+}
+.content_AF_text .img{
+	display:inline-block;
+	width:225px;
+	height:225px;
+	overflow:hidden;
+}
+.content_AF_text .img:hover img{
+	width:255px;
+	height:255px;
+	margin:-15px 0 0 -15px;
+}
+.content_AF_text_ul{
+	width:800px;
+	height:500px;
+	
+}
+.content_AF_text_ul li{
+	float:left;
+	margin:0 23px 40px 0;
+}
+.content_AF_text_ul li h2{
+	margin:12px 0 0 0;
+	text-align:center;
+}
+.content_AF_text_ul li h2 a{
+	font-weight:normal;
+	color:#777;
+}
+
+
+/*=============商品列表模块样式结束==============*/
